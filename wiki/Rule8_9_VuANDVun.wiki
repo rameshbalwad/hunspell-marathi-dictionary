@@ -1,0 +1,19 @@
+#labels Phase-Deploy,Phase-Design
+# धातूला 'ऊ' किंवा 'ऊन' प्रत्यय लावताना धातूच्या शेवटी 'व' असेल तरच 'वू' आणि 'वून' अशी रूपे होतात.पण धातूच्या शेवटी 'व' नसेल तर 'ऊ' किंवा 'ऊन' अशी रूपे होतात
+
+= Introduction =
+
+
+= Query =
+SELECT word FROM wordbase WHERE word LIKE '%वू' OR word LIKE '%वून' LIMIT 100
+
+= Query Result = 
+
+ अडवू
+
+ अडवून
+
+ अनुभवू
+
+ अनुभवून
+
