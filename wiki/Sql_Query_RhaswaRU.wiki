@@ -1,0 +1,41 @@
+#labels Phase-QA,Phase-Design
+# रु अक्षर असलेले शब्द
+
+= Introduction =
+र ला पहिला उकार म्हणजे रु अक्षर असलेले शब्द किती आहेत?
+
+= Query =
+SELECT count(word) FROM wordbase WHERE word LIKE '%रु%'
+
+= Query Result =
+count(word)
+
+906
+
+= Query =
+त्यातील दहा शब्द 
+
+select word from wordbase where word like '%रु%' limit 100,10
+
+= Query Result =
+गुरुंच्या
+
+गुरुंनी
+
+गुरुंबाबतही
+
+गुरुकडे
+
+गुरुकिल्ली
+
+गुरुकुल
+
+गुरुकुलात
+
+गुरुकृपा
+
+गुरुकृपेने
+
+गुरुगृही
+
+पहिला रु व दुसरा रू यात काही चुका झाल्या असल्यामुळे असे शब्द निवडून तज्ज्ञाकडून परत तपासून घ्यावे लागतील.
