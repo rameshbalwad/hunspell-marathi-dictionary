@@ -1,0 +1,48 @@
+#labels Phase-Deploy,Phase-Design
+# मराठी अ-कारान्त शब्दाचे उपान्त्य इकार व उकार दीर्घ लिहावेत.
+
+# उदाहरणार्थ: कठीण, नीट, रतीब, विहीर, ऊस, चिरूट, तूप, मूल.
+
+# तत्सम(मुळात संस्कृत असलेल्या) अ-कारान्त शब्दांतील उपान्त्य इकार व उकार मुळ प्रमाणे र्‍हस्व किंवा दीर्घ लिहावेत.
+
+# उदाहरणार्थ: गणित, विष, गुण, मधुर, दीप, न्यायाधीश, रूप, व्यूह
+
+= Query = 
+SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE (
+word LIKE '%क'
+OR word LIKE '%ख'
+OR word LIKE '%ग'
+OR word LIKE '%घ'
+OR word LIKE '%च'
+OR word LIKE '%छ'
+OR word LIKE '%ज'
+OR word LIKE '%झ'
+OR word LIKE '%ट'
+OR word LIKE '%ठ'
+OR word LIKE '%ड'
+OR word LIKE '%ढ'
+OR word LIKE '%ण'
+OR word LIKE '%त'
+OR word LIKE '%थ'
+OR word LIKE '%द'
+OR word LIKE '%ध'
+OR word LIKE '%न'
+OR word LIKE '%य'
+OR word LIKE '%र'
+OR word LIKE '%ल'
+OR word LIKE '%व'
+OR word LIKE '%श'
+OR word LIKE '%ह'
+OR word LIKE '%ळ'
+)
+AND substring( word, -2, 1 ) IN ('ि')
+
+= Query Result =
+
+ अकल्पित  	त
+
+ अकालिक 	क
+
+ अखंडित 	त
+
+ अखिल 	ल
