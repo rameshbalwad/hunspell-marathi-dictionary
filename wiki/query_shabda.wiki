@@ -1,0 +1,237 @@
+= Rule_5_RhaswantAndDeerghant = 
+
+# नियम ५.१ मराठीतील तत्सम इ-कारान्त आणि उ-कारान्त शब्द दीर्घान्त लिहावेत.
+
+# नियम ५.२ 'परंतु, यथामति, तथापि', ही तत्सम अव्यये र्‍हस्वान्त लिहावीत.
+
+# नियम ५.३ व्यक्तिनामे, ग्रंथनामे, शीर्षके व सुटे र्‍हस्वान्त तत्सम शब्द मराठीत दीर्घान्त लिहावेत.
+
+# नियम ५.४ 'आणि' व 'नि' ही मराठीतील दोन अव्यये र्‍हस्वान्त लिहावीत.
+
+= Introduction =
+
+find दीर्घान्त and र्‍हस्वान्त words.
+
+
+= Query to find words  दीर्घान्त  = 
+
+SELECT word, left( reverse( word ) , 1 ) 
+FROM wordbase WHERE left( reverse( word ) , 1 ) = 'ी' ORDER BY word LIMIT 10
+
+= Query to find words  र्‍हस्वान्त =
+
+SELECT word, left( reverse( word ) , 1 ) 
+FROM wordbase WHERE left( reverse( word ) , 1 ) = 'ि' ORDER BY word LIMIT 1000
+
+= Query Results = 
+
+ अंगयष्टि  	ि
+
+ अंतःकरणशुद्धि 	ि
+
+ अंतरदृष्टि 	ि
+
+ अंत्येष्टि 	ि
+
+ अगस्ति 	ि
+
+ अग्नि 	ि
+
+ अणि 	ि
+
+ अति 	ि
+
+ अतिथि 	ि
+
+
+
+= Rule_6_Deerghant  =
+
+# शेवटचे अक्षर दीर्घ असेल तर त्याचा उपान्त्य इकार किंवा उकार र्‍हस्व लिहावा
+
+# मात्र तत्सम शब्दांना हा नियम लागू नाही. तत्सम शब्दातील उपान्त्य इकार किंवा उकार मुळाप्रमाणे र्‍हस्व किंवा दीर्घ लिहावेत.
+
+= Introduction =
+Add your content here.
+
+= Query =  
+
+SELECT word, substring( word, -1, 1 ) FROM wordbase
+
+WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', 'ू', 'ो', 'े') AND (substring( word, -3, 1 ) IN ('ी', 'ू') OR substring( word, -4, 1 ) IN ('ी', 'ू'))
+LIMIT 1000 
+
+= Query Result =
+
+ अंगयष्टीने  	े
+
+ अंघोळीचे 	े
+
+ अंघोळीला 	ा
+
+ अंतःस्फूर्तीने 	े
+
+ अंतराळासंबंधीचे 	े
+
+ अंतरावरूनही 	ी
+
+ अंतरीचा 	ा
+
+ अंतरीची 	ी
+
+
+
+
+= Rule7_1_Akarant  = 
+
+# मराठी अ-कारान्त शब्दाचे उपान्त्य इकार व उकार दीर्घ लिहावेत.
+
+# उदाहरणार्थ: कठीण, नीट, रतीब, विहीर, ऊस, चिरूट, तूप, मूल.
+
+# तत्सम(मुळात संस्कृत असलेल्या) अ-कारान्त शब्दांतील उपान्त्य इकार व उकार मुळ प्रमाणे र्‍हस्व किंवा दीर्घ लिहावेत.
+
+# उदाहरणार्थ: गणित, विष, गुण, मधुर, दीप, न्यायाधीश, रूप, व्यूह
+
+= Query = 
+SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE (
+word LIKE '%क'
+OR word LIKE '%ख'
+OR word LIKE '%ग'
+OR word LIKE '%घ'
+OR word LIKE '%च'
+OR word LIKE '%छ'
+OR word LIKE '%ज'
+OR word LIKE '%झ'
+OR word LIKE '%ट'
+OR word LIKE '%ठ'
+OR word LIKE '%ड'
+OR word LIKE '%ढ'
+OR word LIKE '%ण'
+OR word LIKE '%त'
+OR word LIKE '%थ'
+OR word LIKE '%द'
+OR word LIKE '%ध'
+OR word LIKE '%न'
+OR word LIKE '%य'
+OR word LIKE '%र'
+OR word LIKE '%ल'
+OR word LIKE '%व'
+OR word LIKE '%श'
+OR word LIKE '%ह'
+OR word LIKE '%ळ'
+)
+AND substring( word, -2, 1 ) IN ('ि')
+
+= Query Result =
+
+ अकल्पित  	त
+
+ अकालिक 	क
+
+ अखंडित 	त
+
+ अखिल 	ल
+
+
+
+
+
+= Rule8_9_VuANDVun  =
+
+
+# धातूला 'ऊ' किंवा 'ऊन' प्रत्यय लावताना धातूच्या शेवटी 'व' असेल तरच 'वू' आणि 'वून' अशी रूपे होतात.पण धातूच्या शेवटी 'व' नसेल तर 'ऊ' किंवा 'ऊन' अशी रूपे होतात
+
+= Introduction =
+
+
+= Query =
+SELECT word FROM wordbase WHERE word LIKE '%वू' OR word LIKE '%वून' LIMIT 100
+
+= Query Result = 
+
+ अडवू
+
+ अडवून
+
+ अनुभवू
+
+ अनुभवून
+
+
+
+
+
+
+= Rule9_Pur  = 
+
+# पूर हा ग्रामवाचक कोणत्याही ग्रामनामास लावताना दिर्घोपान्त्य लिहावा.
+
+= Query =
+SELECT word FROM wordbase WHERE word LIKE '%पूर'
+
+= Query Result =
+
+ इंदापूर
+
+ उदयपूर
+ 
+ कपूर
+ 
+ कल्याणपूर
+ 
+ कोल्हापूर
+
+
+
+
+
+
+
+= Rule13_Anuswarant  = 
+# लेखनात पात्राच्या किंवा वक्त्याच्या तोंडी बोलण्याची भाषा घालावी लागते.त्या वेळी तिचे स्वरूप बोलण्यातील उच्चाराप्रमाणे अनुस्वारयुक्त असावे. उदाहरणार्थ: 'असं केलं , मी म्हटलं; त्यांनी सांगितलं अन्य प्रसंगी ही रूपे ए-कारान्त लिहावीत. उदाहरणार्थ : असे केले; मी म्हटले; त्यांनी सांगितले
+
+= Query =
+SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE word LIKE '%ं' LIMIT 100
+
+= Query Result = 
+ अंगिकारणं  	ं
+ 
+ अंडं 	ं
+ 
+ अंड्याचं 	ं
+
+ अंतःकरणानं 	ं
+
+
+
+
+
+
+=Rule14_Vyanjanant  =
+# नियम १४
+
+# क्वचित्, कदाचित्,अर्थात्,अकस्मात्,विद्वान्,' यांसारखे मराठीत रूढ झालेले तत्सम शब्द अ-कारान्त लिहावेत.
+
+# उदाहरणार्थ : 'क्वचित, कदाचित,अर्थात,अकस्मात,विद्वान,'
+
+# इंग्रजी शब्द ,पदव्या किंवा त्यांचे संक्षेप यांच्या शेवटचे अक्षर आता व्यंजनान्त म्हणजे पाय मोडके लिहू नये.
+
+# उदाहरणार्थ :'एम.ए. , पीएच.डी., अमेरिकन,वॉशिंग्टन
+
+= Query =
+ 
+SELECT word FROM wordbase WHERE substring( word, -1, 1 ) = '्' LIMIT 1000
+
+= Query Result =
+
+ लख्खकन्
+
+ लॉर्डस्
+
+ साक्षात्
+
+ सुजलाम्
+
+ स्टार्ट्
+
+105 words found
