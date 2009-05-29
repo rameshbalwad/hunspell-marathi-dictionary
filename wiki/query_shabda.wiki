@@ -28,11 +28,6 @@
 
 # उदाहरणार्थ: बुद्धि -बुद्धिवैभव, लक्ष्मी -लक्ष्मीपुत्र
 
-
-== Introduction ==
-
-find दीर्घान्त and र्‍हस्वान्त words.
-
 == Query to find words  र्‍हस्वान्त ==
 SELECT word FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' ORDER BY word LIMIT 10
 
