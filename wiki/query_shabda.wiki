@@ -99,10 +99,7 @@ SELECT word FROM wordbase WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', '�
 # उदाहरणार्थ: गणित, विष, गुण, मधुर, दीप, न्यायाधीश, रूप, व्यूह
 
 == Query == 
- SELECT word, substring( word, -1, 1 )
-FROM wordbase
-WHERE (
-word LIKE '%क'
+SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE ( word LIKE '%क'
 OR word LIKE '%ख'
 OR word LIKE '%ग'
 OR word LIKE '%घ'
