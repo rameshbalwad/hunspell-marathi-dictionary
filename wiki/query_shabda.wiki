@@ -59,17 +59,15 @@ SELECT word FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' ORDER BY wo
 
 # शेवटचे अक्षर दीर्घ असेल तर त्याचा उपान्त्य इकार किंवा उकार र्‍हस्व लिहावा
 
+# उदाहरणार्थ किडा, विळी, पिसू, इथे, निघो, फुगा, खुनी, सुरू, कुठे, उठो.
+
 # मात्र तत्सम शब्दांना हा नियम लागू नाही. तत्सम शब्दातील उपान्त्य इकार किंवा उकार मुळाप्रमाणे र्‍हस्व किंवा दीर्घ लिहावेत.
 
-== Introduction ==
-Add your content here.
+# उदाहरणार्थ: पूजा, गीता, अनुज्ञा, दक्षिणा
 
 == Query ==  
 
-SELECT word, substring( word, -1, 1 ) FROM wordbase
-
-WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', 'ू', 'ो', 'े') AND (substring( word, -3, 1 ) IN ('ी', 'ू') OR substring( word, -4, 1 ) IN ('ी', 'ू'))
-LIMIT 1000 
+SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', 'ू', 'ो', 'े') AND (substring( word, -3, 1 ) IN ('ी', 'ू') OR substring( word, -4, 1 ) IN ('ी', 'ू')) LIMIT 1000 
 
 == Query Result ==
 
@@ -88,8 +86,6 @@ LIMIT 1000
  अंतरीचा 	ा
 
  अंतरीची 	ी
-
-
 
 
 = Rule7_1_Akarant  = 
