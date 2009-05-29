@@ -66,8 +66,8 @@ SELECT word FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' ORDER BY wo
 # उदाहरणार्थ: पूजा, गीता, अनुज्ञा, दक्षिणा
 
 == Query ==  
-
-SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', 'ू', 'ो', 'े') AND (substring( word, -3, 1 ) IN ('ी', 'ू') OR substring( word, -4, 1 ) IN ('ी', 'ू')) LIMIT 1000 
+SELECT word FROM wordbase WHERE left( reverse( word ) , 1 ) IN ('ा', 'ी', 'ू', 'ो', 'े'
+) AND (substring( word, -3, 1 ) IN ('ी', 'ू')) LIMIT 10 
 
 == Query Result ==
 
