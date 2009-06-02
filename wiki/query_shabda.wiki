@@ -249,3 +249,8 @@ SELECT word FROM wordbase WHERE substring( word, -1, 1 ) = '्' LIMIT 1000
  स्टार्ट्
 
 105 words found
+
+
+The Rules of Grammar are described here...
+
+http://tinyurl.com/ngn5jm
