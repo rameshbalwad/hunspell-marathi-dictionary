@@ -215,6 +215,12 @@ SELECT word FROM wordbase WHERE substring( word, -1, 1 ) = '्' LIMIT 1000
 
 105 words found
 
+=== Query to update and remove the  व्यंजनान्त ===
+update ignore wordbase set word = left( word, (char_length( word ) -1 )) WHERE substring( word, -1, 1 ) = '्' 
+
+delete from wordbase WHERE substring( word, -1, 1 ) = '्' 
+
+
 ------
 
 The Rules of Grammar are described here...
