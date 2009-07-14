@@ -19,3 +19,26 @@ As per the page above, the most popular character is र that appears 64926 time
 
 अभिवॄद्धी,अभिवॄद्ध्यर्थ,उपकॄत,घॄणा,पॄथ्वीचे,त्यादॄष्ट्या,दॄष्टीने,घॄष्णेश्वर,दॄष्टी,संस्कॄतीचे,
 कॄती,त्यादॄष्टीने,निवॄत्त,वॄत्ती,वॄत्तीचा,वॄत्तीमुळे,गॄहपाठाच्या,चित्रपटसॄष्टीतील
+
+
+=The query=
+The following query was used to find the count of each character across all words.
+
+{{{
+DROP TABLE IF EXISTS int_table;
+
+CREATE TABLE int_table(int_col int( 11 ) NOT NULL , PRIMARY KEY ( int_col )) ENGINE = MYISAM ;
+
+INSERT INTO int_table VALUES ( 0 ) , ( 1 ) , ( 2 ) , ( 3 ) , ( 4 ) , ( 5 ) , ( 6 ) , ( 7 ) , ( 8 ) , ( 9 ) , ( 10 ) , 
+( 11 ) , ( 12 ) , ( 13 ) , ( 14 ) , ( 15 ) , ( 16 ) , ( 17 ) , ( 18 ) , ( 19 ) , ( 20 ) , 
+( 21 ) , ( 22 ) , ( 23 ) , ( 24 ) , ( 25 ) , ( 26 ) , ( 27 ) , ( 28 ) , ( 29 ) , ( 30 ) ;
+
+DROP TABLE IF EXISTS akshar;
+
+CREATE TABLE akshar SELECT int_col, SUBSTRING( s, int_col +1, 1 ) AS c 
+FROM int_table, (SELECT word AS s FROM wordbase WHERE verified > 0) sel1
+WHERE int_col < char_length( s ) ;
+
+SELECT c AS mulakshar, count( * ) AS cnt FROM akshar GROUP BY c LIMIT 100
+
+}}}
