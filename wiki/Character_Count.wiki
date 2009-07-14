@@ -4,7 +4,7 @@
 = Introduction =
 In order to find the incorrect word, we also need to find if certain characters does appear anywhere in the wordlist. The list of characters (मूळाक्षर) and it's count is listed on the following page.
 
-[https://spreadsheets.google.com/ccc?key=tBJjzbcQB5i7tmfdO5Hk2DQ&hl=en#]
+[http://spreadsheets.google.com/pub?key=tBJjzbcQB5i7tmfdO5Hk2DQ&output=html]
 
 As per the page above, the most popular character is र that appears 64926 times and least popular is ऐ that appears 361 times. I can also see that ङ is mentioned in 18 words. In order to find where does the ङ is used, I will query the table...
 
