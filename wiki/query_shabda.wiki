@@ -311,6 +311,17 @@ delete from wordbase WHERE substring( word, -1, 1 ) = '्'
 
 ------
 
+= Rule17_ityadi = 
+
+=== नियम १७ 'इत्यादी' व 'ही' हे शब्द दीर्घांन्त लिहावेत . 'अन्' हा शब्द व्यंजनान्त लिहावा. ===
+
+# इत्यादि, हि आणि अन हे चुकीचे शब्द काढून टाकले. त्याची क्वेरी...
+
+DELETE FROM wordbase WHERE word = 'इत्यादि' OR word = 'हि' OR word = 'अन' LIMIT 3
+
+
+------
+
 The Rules of Grammar are described here...
 
 http://tinyurl.com/ngn5jm
