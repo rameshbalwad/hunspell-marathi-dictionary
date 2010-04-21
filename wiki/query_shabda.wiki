@@ -41,6 +41,7 @@ DELETE FROM wordbase WHERE word = 'परंतू' OR word = 'यथामत�
 
 
 delete FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' LIMIT 200
+
 ही क्वेरी वापरून दीर्घान्त शब्द काढून टाकले.
 
 
