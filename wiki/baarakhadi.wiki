@@ -9,8 +9,10 @@ right( 'कृ', 1 ) , right( 'कॄ', 1 ) , right( 'कॢ', 1 ) , right( 'क
 drop table if exists swar;
 
 CREATE TABLE `swar` (
+   swar_id int not null auto_increment,
   `myswar` varchar(100) NOT NULL default '',
-  PRIMARY KEY  (`myswar`)
+   PRIMARY KEY (swar_id),  
+   KEY  (`myswar`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `swar` (`myswar`) VALUES('');
@@ -36,8 +38,10 @@ INSERT INTO `swar` (`myswar`) VALUES('ॣ');
 drop table if exists vyanjan;
 
 CREATE TABLE `vyanjan` (
+   vyanjan_id int not null auto_increment,
   `akshar` varchar(100) default NULL,
-   primary key (akshar) 
+   primary key(vyanjan_id),
+   key (akshar) 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `vyanjan` (`akshar`) VALUES('क');
@@ -87,37 +91,38 @@ INSERT INTO `vyanjan` (`akshar`) VALUES('ज्ञ');
 
 SELECT b.akshar, a.myswar, concat( b.akshar, a.myswar ) AS mycharacter
 FROM swar AS a INNER JOIN vyanjan AS b
+ORDER BY vyanjan_id, swar_id
 
 
 akshar 	myswar 	mycharacter
-क 	ं 	कं
-क 	ः 	कः
+क 	  	क
 क 	ा 	का
 क 	ि 	कि
 क 	ी 	की
 क 	ु 	कु
 क 	ू 	कू
-क 	ृ 	कृ
-क 	ॄ 	कॄ
 क 	े 	के
 क 	ै 	कै
 क 	ो 	को
 क 	ौ 	कौ
+क 	ं 	कं
+क 	ः 	कः
+क 	ृ 	कृ
+क 	ॄ 	कॄ
 क 	ॢ 	कॢ
 क 	ॣ 	कॣ
-ख 	ं 	खं
-ख 	ः 	खः
+ख 	  	ख
 ख 	ा 	खा
 ख 	ि 	खि
 ख 	ी 	खी
 ख 	ु 	खु
 ख 	ू 	खू
-ख 	ृ 	खृ
-ख 	ॄ 	खॄ
 ख 	े 	खे
 ख 	ै 	खै
 ख 	ो 	खो
 ख 	ौ 	खौ
-ख 	ॢ 	खॢ
+ख 	ं 	खं
+ख 	ः 	खः
+ख 	ृ 	खृ
 
 }}}
