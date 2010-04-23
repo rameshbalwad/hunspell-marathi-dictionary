@@ -118,3 +118,46 @@ select substring('व्युत्क्रम', (locate('त्क्' , 'व
 
 }}}
 
+नियम क्रमांक २१ - मराठी शब्दात आलेल्या जोडाक्षराच्या आधीच्या अक्षराला वेलांटी लिहावी लागली, तर ती नेहमी पहिली किंवा र्‍हस्व लिहावी. उदा. किल्ला, तिप्पट, शिल्लक, हिस्सा
+अपवाद संस्कृत शब्दांचा : परीक्षा, भीष्म, ईश्वर
+
+हीच गोष्ट जोडाक्षराच्या आधीच्या उकाराला लागू होते. उदा. कुस्ती, गुद्दा, दुप्पट, लुच्चा, मुक्काम, उन्हाळा
+अपवाद संस्कृत शब्दांचा : गोमूत्र, पूज्य, मूल्य, शून्य, ऊर्जा
+
+लाखो शब्दांमधून असे शब्द शोधून ते तपासणे कठीण आहे. म्हणून खाली दिलेली क्वेरी वापरली.
+
+{{{
+
+DROP TABLE IF EXISTS myjodakshar;
+
+CREATE TABLE myjodakshar SELECT word, verified, locate( dt.jodakshar, word ) AS mylocate, substring( word, (
+locate( dt.jodakshar, word ) * -2 ) , 1
+)mysub, right( (
+left( word, (
+locate( dt.jodakshar, word ) -1 ) )
+), 1
+) AS mychar
+FROM wordbase AS a
+INNER JOIN (
+
+SELECT concat( a.akshar, b.akshar ) AS jodakshar
+FROM mulakshare AS a
+INNER JOIN mulakshare AS b
+) AS dt
+WHERE word LIKE concat( '%', jodakshar, '%' )
+LIMIT 1000
+
+
+SELECT * FROM myjodakshar WHERE mychar IN ('ी', 'ू')
+
+मूर्च्छा  	20071216  	3  	र  	ू
+सूक्ष्मदर्शक 	20071216 	3 	म 	ू
+सूक्ष्मदृष्टी 	20071216 	3 	द 	ू
+सूक्ष्मबुद्धी 	20071216 	3 	ब 	ू
+सूक्ष्मातिसूक्ष्म 	20071216 	3 	ू 	ू
+सूक्ष्म 	20071216 	3 	ू 	ू
+सूक्ष्मजीव 	20071216 	3 	ष 	ू
+दुरूस्त्या 	20090518 	5 	द 	ू
+सूक्ष्मात 	20090519 	3 	् 	ू
+
+}}}
