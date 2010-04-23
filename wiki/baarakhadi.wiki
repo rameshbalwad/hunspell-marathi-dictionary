@@ -13,6 +13,7 @@ CREATE TABLE `swar` (
   PRIMARY KEY  (`myswar`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+INSERT INTO `swar` (`myswar`) VALUES('');
 INSERT INTO `swar` (`myswar`) VALUES('ा');
 INSERT INTO `swar` (`myswar`) VALUES('ि');
 INSERT INTO `swar` (`myswar`) VALUES('ी');
@@ -120,4 +121,3 @@ akshar 	myswar 	mycharacter
 ख 	ॢ 	खॢ
 
 }}}
-
