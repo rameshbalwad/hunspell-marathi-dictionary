@@ -127,7 +127,7 @@ akshar 	myswar 	mycharacter
 
 
 SELECT b.akshar, group_concat( concat( b.akshar, a.myswar ) ORDER BY swar_id ) AS mycharacter
-FROM swar AS a INNER JOIN vyanjan AS b
+FROM vyanjan AS b INNER JOIN swar AS a
 GROUP BY b.akshar
 ORDER BY vyanjan_id, swar_id
 
