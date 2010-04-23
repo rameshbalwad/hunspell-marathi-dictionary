@@ -90,7 +90,7 @@ INSERT INTO `vyanjan` (`akshar`) VALUES('ज्ञ');
 
 
 SELECT b.akshar, a.myswar, concat( b.akshar, a.myswar ) AS mycharacter
-FROM swar AS a INNER JOIN vyanjan AS b
+FROM vyanjan AS b INNER JOIN swar AS a
 ORDER BY vyanjan_id, swar_id
 
 
