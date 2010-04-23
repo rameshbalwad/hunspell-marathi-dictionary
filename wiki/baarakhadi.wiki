@@ -1,0 +1,123 @@
+{{{
+SELECT right( 'क', 1 ) , right( 'का', 1 ) , right( 'कि', 1 ) , right( 'की', 1 ) , right( 'कु', 1 ) , right( 'कू', 1 ) , 
+right( 'के', 1 ) , right( 'कै', 1 ) , right( 'को', 1 ) , right( 'कौ', 1 ) , right( 'कं', 1 ) , right( 'कः', 1 ) , 
+right( 'कृ', 1 ) , right( 'कॄ', 1 ) , right( 'कॢ', 1 ) , right( 'कॣ', 1 )
+
+
+क 	ा 	ि 	ी 	ु 	ू 	े 	ै 	ो 	ौ 	ं 	ः 	ृ 	ॄ 	ॢ 	ॣ
+
+drop table if exists swar;
+
+CREATE TABLE `swar` (
+  `myswar` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`myswar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `swar` (`myswar`) VALUES('ा');
+INSERT INTO `swar` (`myswar`) VALUES('ि');
+INSERT INTO `swar` (`myswar`) VALUES('ी');
+INSERT INTO `swar` (`myswar`) VALUES('ु');
+INSERT INTO `swar` (`myswar`) VALUES('ू');
+INSERT INTO `swar` (`myswar`) VALUES('े');
+INSERT INTO `swar` (`myswar`) VALUES('ै');
+INSERT INTO `swar` (`myswar`) VALUES('ो');
+INSERT INTO `swar` (`myswar`) VALUES('ौ');
+INSERT INTO `swar` (`myswar`) VALUES('ं');
+INSERT INTO `swar` (`myswar`) VALUES('ः');
+INSERT INTO `swar` (`myswar`) VALUES('ृ');
+INSERT INTO `swar` (`myswar`) VALUES('ॄ');
+INSERT INTO `swar` (`myswar`) VALUES('ॢ');
+INSERT INTO `swar` (`myswar`) VALUES('ॣ');
+
+
+
+
+drop table if exists vyanjan;
+
+CREATE TABLE `vyanjan` (
+  `akshar` varchar(100) default NULL,
+   primary key (akshar) 
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('क');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ख');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ग');
+INSERT INTO `vyanjan` (`akshar`) VALUES('घ');
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('च');
+INSERT INTO `vyanjan` (`akshar`) VALUES('छ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ज');
+INSERT INTO `vyanjan` (`akshar`) VALUES('झ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ञ');
+
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('ट');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ठ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ड');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ढ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ण');
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('त');
+INSERT INTO `vyanjan` (`akshar`) VALUES('थ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('द');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ध');
+INSERT INTO `vyanjan` (`akshar`) VALUES('न');
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('प');
+INSERT INTO `vyanjan` (`akshar`) VALUES('फ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ब');
+INSERT INTO `vyanjan` (`akshar`) VALUES('भ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('म');
+
+INSERT INTO `vyanjan` (`akshar`) VALUES('य');
+INSERT INTO `vyanjan` (`akshar`) VALUES('र');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ल');
+INSERT INTO `vyanjan` (`akshar`) VALUES('व');
+INSERT INTO `vyanjan` (`akshar`) VALUES('श');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ष');
+INSERT INTO `vyanjan` (`akshar`) VALUES('स');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ह');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ळ');
+INSERT INTO `vyanjan` (`akshar`) VALUES('क्ष');
+INSERT INTO `vyanjan` (`akshar`) VALUES('ज्ञ');
+
+
+
+
+SELECT b.akshar, a.myswar, concat( b.akshar, a.myswar ) AS mycharacter
+FROM swar AS a INNER JOIN vyanjan AS b
+
+
+akshar 	myswar 	mycharacter
+क 	ं 	कं
+क 	ः 	कः
+क 	ा 	का
+क 	ि 	कि
+क 	ी 	की
+क 	ु 	कु
+क 	ू 	कू
+क 	ृ 	कृ
+क 	ॄ 	कॄ
+क 	े 	के
+क 	ै 	कै
+क 	ो 	को
+क 	ौ 	कौ
+क 	ॢ 	कॢ
+क 	ॣ 	कॣ
+ख 	ं 	खं
+ख 	ः 	खः
+ख 	ा 	खा
+ख 	ि 	खि
+ख 	ी 	खी
+ख 	ु 	खु
+ख 	ू 	खू
+ख 	ृ 	खृ
+ख 	ॄ 	खॄ
+ख 	े 	खे
+ख 	ै 	खै
+ख 	ो 	खो
+ख 	ौ 	खौ
+ख 	ॢ 	खॢ
+
+}}}
+
