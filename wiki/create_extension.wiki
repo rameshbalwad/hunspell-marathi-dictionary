@@ -1,0 +1,30 @@
+These are the steps those needs to be followed in order to publish the new version of dictionary. The part involves the Database exercise and the second part shows the steps to be followed on the desktop.
+
+1) Server: you will have to process the words and make a downloadable file.
+
+  * save the words in a new table using the following query
+
+  * create table toprint select word from wordbase where verified > 0 order by word
+
+  * dump the table toprint without structure and with "complete inserts"
+
+  * download the dump file to /root/Desktop/ folder
+
+2) Save the words in the text format and rename the zip file to xpi
+
+{{{
+# remove SQL syntax and save only the Marathi words to a file in the directory
+sed 's/INSERT INTO `toprint` (`word`) VALUES(//g' /root/Desktop/samoak.sql | sed 's/);//g' | replace "'" "" > /root/Desktop/marathi__india__dictionary-8.3-fx+tb+sm+sb.xpi_FILES/dictionaries/mr-IN.dic
+
+# remove the comments displayed at the top of the dump file 
+# add the count of the words at the top of this file
+
+# change directory before creating a zip file
+cd /root/Desktop/marathi__india__dictionary-8.3-fx+tb+sm+sb.xpi_FILES
+
+# zip the file and then rename
+zip mymar.zip *
+
+# rename the zip file to xpi so that it is recognized as firefox extension
+mv mymar.zip marathi.xpi
+}}}
