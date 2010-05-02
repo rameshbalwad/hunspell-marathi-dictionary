@@ -1,0 +1,13 @@
+{{{
+delete from wordbase where word like ('%य़%') limit 1000
+delete from wordbase where word like ('%ध्द%') limit 1000
+delete from wordbase where word like ('%’%') limit 1000
+delete from wordbase where word like ('%‘%') limit 1000
+
+delete FROM wordbase WHERE word LIKE concat( '%', right( 'वॊ', 1 ) , '%' ) limit 1000
+
+DELETE FROM wordbase WHERE word LIKE concat( '%', right( 'णॆ', 1 ) , '%' ) LIMIT 1000  
+
+delete from wordbase WHERE word LIKE concat( '%', right( 'नाऎ', 1 ) , '%' ) LIMIT 1000  
+
+}}}
