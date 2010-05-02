@@ -170,7 +170,7 @@ SELECT * FROM wordbase INNER JOIN rulefive ON word LIKE concat( '%', myword, '%'
 
 delete FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' LIMIT 200
 
-ही क्वेरी वापरून दीर्घान्त शब्द काढून टाकले.
+ही क्वेरी वापरून र्‍हस्वान्त शब्द काढून टाकले.
 
 ------
 
