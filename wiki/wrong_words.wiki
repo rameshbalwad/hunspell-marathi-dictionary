@@ -15,4 +15,8 @@ alter table wrongword add primary key (mywrong);
 
 select * from wordbase as a inner join wrongword as b on word like concat('%', mywrong, '%');
 
+# Wrong words made available for review
+
+update wordbase as a inner join wrongword as b on word like concat('%', mywrong, '%') set a.verified = 0 
+
 }}}
