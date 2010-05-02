@@ -265,6 +265,7 @@ SELECT word FROM wordbase WHERE verified >0 AND (word LIKE '%क्क%' OR word
 # उदाहरणार्थ:किंमत-किमतीला,किमतींना; गंमत-गमतीला,गमतींचा
 
 SELECT word FROM wordbase WHERE word LIKE '%ंम%' LIMIT 1000
+
 Query Results
 
 कार्यालयांमध्ये, किंमत, किंमतीमुळे, किंमतीला 
@@ -284,6 +285,11 @@ SELECT word FROM wordbase WHERE word LIKE '%वू' OR word LIKE '%वून' LI
  अडवून
  अनुभवू
  अनुभवून
+
+हटवू हटवून हरवू हरवून हलवू हलवून हसवून हाकलवून हादरवून हालवून हिंडवून हिणवून हिरावून हिसकावून हुसकावू हुसकावून
+हेलकावू हेलावून होवू होवून 
+
+410 words found
 
 ------
 
