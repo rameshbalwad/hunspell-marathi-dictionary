@@ -280,13 +280,9 @@ drop table if exists eightone;
 
 CREATE TABLE `eightone` (`secondlast` varchar(100) default NULL) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `eightone` VALUES ('गरीब'), ('खून'), ('सूड'), ('दूध');
+INSERT INTO `eightone` VALUES ('गरीब'), ('खून'), ('सूड'), ('दूध'), ('कीस'), ('खीर'), ('पीक'), ('खूर'), ('पूड'), ('मूल');
 
 alter table eightone add primary key (secondlast);
-
-SELECT * FROM `wordbase` AS a
-INNER JOIN pratya AS b ON word LIKE concat( '%', myprat )
-INNER JOIN eightone as C ON word LIKE concat(secondlast, '%');
 
 SELECT * FROM `wordbase` AS a
 INNER JOIN pratya AS b ON word LIKE concat( '%', myprat )
