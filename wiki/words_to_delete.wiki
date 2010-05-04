@@ -1,5 +1,7 @@
 {{{
 delete from wordbase where word like ('%य़%') limit 1000
+delete FROM `wordbase` WHERE word like '%फ़%' limit 100
+
 delete from wordbase where word like ('%ध्द%') limit 1000
 delete from wordbase where word like ('%’%') limit 1000
 delete from wordbase where word like ('%‘%') limit 1000
