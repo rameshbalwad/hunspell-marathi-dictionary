@@ -359,7 +359,17 @@ SELECT word FROM wordbase WHERE word LIKE '%पूर'
 # मात्र '-स' आणि '-त' हे विभक्तिप्रत्यय लावताना ग्रामनामांचे सामान्यरूप करावेच लागते. जसे -
 कोल्हापूर - कोल्हापुरास कोल्हापुरात कोल्हापुराबाहेर
 
+{{{
+drop table if exists city;
+create table city (pur varchar(100));
 
+insert into city values ('इंदापूर'), ('इस्लामपूर'), ('उदयपूर'), ('कानपूर'), ('कोल्हापूर'), ('खालापूर'), ('चंद्रपूर'), ('जबलपूर'), ('जयपूर'), 
+('जयसिंगपूर'), ('तारापूर'), ('तुळजापूर'), ('नागपूर'), ('पंढरपूर'), ('बदलापूर'), ('मिदनापूर'), ('राजापूर'), ('शहापूर'), ('श्रीरामपूर'), ('सिंगापूर'), ('सोलापूर');
+insert into city select replace(pur, 'पूर', 'पुर') from city;
+
+select * from wordbase as a inner join city as b on word like concat('%', pur, '%') order by word
+
+}}}
 
 ------
 
