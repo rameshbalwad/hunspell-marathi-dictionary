@@ -14,4 +14,7 @@ DELETE FROM wordbase WHERE word IN ('परंतू', 'यथामती', '�
 DELETE FROM wordbase WHERE (word LIKE '%ि' OR word LIKE '%ु' OR word like '%्') and (word not in ('परंतु', 'यथामति', 'तथापि', 'कदापि', 'अद्यापि', 'आणि', 'नि', 'लुटुलुटु', 'तुरुतुरु', 'झुंजुमुंजु', 'झुरुमुरु', 'हळुहळु', 'खुदुखुदु', 'अन्')) limit 200
 
 DELETE FROM wordbase WHERE (word LIKE '%कोणचा%' OR word LIKE '%एकादा%') limit 100
+
+DELETE FROM wordbase WHERE word LIKE '%़%' and word not like '%ऱ्%' limit 30
+
 }}}
