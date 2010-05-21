@@ -171,6 +171,7 @@ So the final statement should look something like this...
   <block-list:block block-list:abbreviated-name="अंकलीपी" block-list:name="अंकलिपी" /> 
 
 Or you can get the same results using the following query.
+create table finalAutocorrect 
 SELECT concat( '<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" /> ' ) FROM autocorrect
 
 
