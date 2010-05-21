@@ -180,8 +180,16 @@ Or you can get the same results using the following query.
 drop table if exists finalAutocorrect;
 
 create table finalAutocorrect 
-select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" />') as myxml from autocorrect limit 100;
+select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" />') as myxml from autocorrect;
 
+# Export the data of finalAutocorrect table in CSV format without any delimiters
+# The XML file should have a name DocumentList.xml and should start with the following 2 lines.
+echo '<?xml version="1.0" encoding="UTF-8" ?> <block-list:block-list xmlns:block-list="http://openoffice.org/2001/block-list">' > header.txt
+echo '</block-list:block-list>' > footer.txt
+cat header.txt finalAutocorrect.csv footer.txt > /media/disk/acor_mr-IN/DocumentList.xml
+cd /media/disk/acor_mr-IN
+zip -r acor_mr-IN.dat *
+mv acor_mr-IN.dat /media/disk/
 
 The XML file should have a name DocumentList.xml and should start with the following 2 lines.
 <?xml version="1.0" encoding="UTF-8" ?> 
