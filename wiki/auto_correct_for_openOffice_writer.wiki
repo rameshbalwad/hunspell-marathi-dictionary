@@ -172,7 +172,7 @@ So the final statement should look something like this...
 
 Or you can get the same results using the following query.
 create table finalAutocorrect 
-SELECT concat( '<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" /> ' ) FROM autocorrect
+select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" /> '  ) as myxml from autocorrect
 
 
 The XML file should have a name DocumentList.xml and should start with the following 2 lines.
