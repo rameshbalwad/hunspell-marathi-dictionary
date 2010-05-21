@@ -174,7 +174,7 @@ Or you can get the same results using the following query.
 drop table if exists finalAutocorrect;
 
 create table finalAutocorrect 
-select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" /> '  ) as myxml from autocorrect limit 100;
+select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" />') as myxml from autocorrect limit 100;
 
 
 The XML file should have a name DocumentList.xml and should start with the following 2 lines.
