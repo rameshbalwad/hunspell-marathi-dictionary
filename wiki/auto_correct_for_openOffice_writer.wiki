@@ -130,6 +130,8 @@ insert into autocorrect
 SELECT replace( word, 'त्व', 'त्त्व') , word FROM wordbase WHERE verified >0 
 and (word like '%त्व%'  and word not like '%त्त्व%') LIMIT 500; 
 
+insert into autocorrect
+SELECT replace( word, 'ङ्म', 'गम' ) , word FROM wordbase WHERE verified > 0 AND word LIKE '%ङ्म%' LIMIT 30;
 
 
 Database: main - Export 
