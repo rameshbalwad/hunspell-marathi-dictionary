@@ -72,6 +72,57 @@ replace(word, 'सु', 'सू')
 , word
 FROM wordbase WHERE verified > 0 AND (word LIKE 'अति%' OR word LIKE 'अधि%' OR word LIKE 'अनु%' OR word LIKE 'अभि%' OR word LIKE 'उप%' OR word LIKE 'नि%' OR word LIKE 'परि%' OR word LIKE 'प्रति%' OR word LIKE 'वि%' OR word LIKE 'सु%' ) limit 10000;
 
+insert into autocorrect
+SELECT 
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'िक', 'ीक') 
+, 'ीत', 'ित')
+, 'ित', 'ीत')
+, 'िय', 'ीय')
+, 'िल', 'ील')
+, 'ीन', 'िन')
+, 'ीय', 'िय')
+, 'कीय', 'किय')
+, word
+FROM wordbase 
+WHERE verified >0
+AND (
+word LIKE '%ीक'
+OR word LIKE '%िक'
+OR word LIKE '%ीत'
+OR word LIKE '%ित'
+OR word LIKE '%िय'
+OR word LIKE '%िल'
+OR word LIKE '%ीन'
+OR word LIKE '%ीय'
+OR word LIKE '%कीय'
+)
+AND (
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'िक', 'ीक') 
+, 'ीत', 'ित')
+, 'ित', 'ीत')
+, 'िय', 'ीय')
+, 'िल', 'ील')
+, 'ीन', 'िन')
+, 'ीय', 'िय')
+, 'कीय', 'किय')
+!= word
+)
+limit 3000;
+
 
 
 Database: main - Export 
