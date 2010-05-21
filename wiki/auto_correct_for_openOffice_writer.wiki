@@ -50,6 +50,28 @@ select replace(replace(word, 'ऱ्य', 'र्य'), 'ऱ्ह', 'र्ह'
 insert into autocorrect
 SELECT replace( word, 'ः', '' ) , word FROM wordbase WHERE verified > 0 AND word LIKE '%ः%' LIMIT 1000;
  
+insert into autocorrect
+SELECT 
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'सु', 'सू') 
+, 'वि', 'वी')
+, 'प्रति', 'प्रती')
+, 'परि', 'परी')
+, 'नि', 'नी')
+, 'अभि', 'अभी')
+, 'अनु', 'अनू')
+, 'अधि', 'अधी')
+, 'अति', 'अती')
+, word
+FROM wordbase WHERE verified > 0 AND (word LIKE 'अति%' OR word LIKE 'अधि%' OR word LIKE 'अनु%' OR word LIKE 'अभि%' OR word LIKE 'उप%' OR word LIKE 'नि%' OR word LIKE 'परि%' OR word LIKE 'प्रति%' OR word LIKE 'वि%' OR word LIKE 'सु%' ) limit 10000;
+
 
 
 Database: main - Export 
