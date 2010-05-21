@@ -131,7 +131,15 @@ SELECT replace( word, 'त्व', 'त्त्व') , word FROM wordbase WHERE
 and (word like '%त्व%'  and word not like '%त्त्व%') LIMIT 500; 
 
 insert into autocorrect
-SELECT replace( word, 'ङ्म', 'गम' ) , word FROM wordbase WHERE verified > 0 AND word LIKE '%ङ्म%' LIMIT 30;
+SELECT replace( word, 'ङ्म', 'गम' ) , word FROM wordbase WHERE verified > 0 
+AND word LIKE '%ङ्म%' LIMIT 30;
+
+insert into autocorrect
+SELECT replace( word, 'ऐ', 'ऎ' ), word from wordbase WHERE verified > 0 
+AND word LIKE '%ऐ%' limit 1000;
+
+SELECT replace( word, 'ँ', 'ॅं' ) , word FROM wordbase WHERE verified > 0 
+AND word LIKE '%ँ%' LIMIT 1000;
 
 
 Database: main - Export 
