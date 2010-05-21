@@ -170,6 +170,9 @@ So the final statement should look something like this...
   <block-list:block block-list:abbreviated-name="अकराळविकराळ" block-list:name="अक्राळविक्राळ" /> 
   <block-list:block block-list:abbreviated-name="अंकलीपी" block-list:name="अंकलिपी" /> 
 
+Or you can get the same results using the following query.
+SELECT concat( '<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" /> ' ) FROM autocorrect
+
 
 The XML file should have a name DocumentList.xml and should start with the following 2 lines.
 <?xml version="1.0" encoding="UTF-8" ?> 
