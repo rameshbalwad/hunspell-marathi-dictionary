@@ -123,6 +123,13 @@ replace(word, 'िक', 'ीक')
 )
 limit 3000;
 
+insert into autocorrect 
+SELECT replace( word, 'त्त्व', 'त्व' ) , word FROM wordbase WHERE verified >0 AND word LIKE '%त्त्व%' LIMIT 300; 
+
+insert into autocorrect
+SELECT replace( word, 'त्व', 'त्त्व') , word FROM wordbase WHERE verified >0 
+and (word like '%त्व%'  and word not like '%त्त्व%') LIMIT 500; 
+
 
 
 Database: main - Export 
