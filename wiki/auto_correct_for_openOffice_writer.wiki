@@ -44,6 +44,11 @@ OR word LIKE (
 AND replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ) != word
 LIMIT 50000;
 
+insert into autocorrect
+select replace(replace(word, 'ऱ्य', 'र्य'), 'ऱ्ह', 'र्ह'), word from wordbase where verified > 0 and (word like '%ऱ्य%' or word like '%ऱ्ह%') limit 3000;
+
+
+
 
 Database: main - Export 
 autocorrect table CSV format
