@@ -1,5 +1,4 @@
 #labels Phase-Deploy,Featured
-
 {{{
 Here is the process that was used to create the auto-correct extension that can be found here...
 http://code.google.com/p/openoffice-marathi-autocorrect/
@@ -20,8 +19,30 @@ from wordbase where verified > 0 and (
 like '%द्धै%') or (word like '%द्धो%') or (word like '%द्धौ%') or (word like '%द्धं%') or
 (word like '%द्धः%')
 )
-limit 2000
+limit 2000;
 
+insert into autocorrect
+SELECT replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ), word 
+FROM wordbase WHERE verified >0
+AND (
+char_length( word ) - char_length( replace( replace( replace( replace( word, 'ी', '' ) , 'ि', '' ) , 'ू', '' ) , 'ु', '' ) ) >1
+)
+AND (
+word LIKE (
+'%ी%'
+)
+OR word LIKE (
+'%ि%'
+)
+OR word LIKE (
+'%ू%'
+)
+OR word LIKE (
+'%ु%'
+)
+)
+AND replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ) != word
+LIMIT 50000;
 
 
 Database: main - Export 
