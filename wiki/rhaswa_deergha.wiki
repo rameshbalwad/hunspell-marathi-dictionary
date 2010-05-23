@@ -153,13 +153,13 @@ insert into autocheck SELECT a.word  FROM wordbase AS a INNER JOIN wordbase AS b
 
 insert into autocheck SELECT a.word  FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word,  'ू', 'ु') WHERE a.word LIKE '%ू%';
 
-insert into autocheck SELECT replace( a.word, 'ि', 'ी' ) FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ि', 'ी' ) WHERE a.word LIKE '%ि%';
+insert into autocheck SELECT replace( a.word, 'ि', 'ी' ) FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ि', 'ी' ) WHERE a.word LIKE '%ि%' and a.verified > 0 and b.verified > 0;
 
-insert into autocheck SELECT replace( a.word, 'ी', 'ि' ) FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ी', 'ि' ) WHERE a.word LIKE '%ी%';
+insert into autocheck SELECT replace( a.word, 'ी', 'ि' ) FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ी', 'ि' ) WHERE a.word LIKE '%ी%' and a.verified > 0 and b.verified > 0;
 
-insert into autocheck SELECT replace( a.word, 'ु', 'ू')  FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ु', 'ू') WHERE a.word LIKE '%ु%';
+insert into autocheck SELECT replace( a.word, 'ु', 'ू')  FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word, 'ु', 'ू') WHERE a.word LIKE '%ु%' and a.verified > 0 and b.verified > 0;
 
-insert into autocheck SELECT replace( a.word,  'ू', 'ु') FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word,  'ू', 'ु') WHERE a.word LIKE '%ू%';
+insert into autocheck SELECT replace( a.word,  'ू', 'ु') FROM wordbase AS a INNER JOIN wordbase AS b ON b.word = replace( a.word,  'ू', 'ु') WHERE a.word LIKE '%ू%' and a.verified > 0 and b.verified > 0;
 
 ALTER ignore TABLE autocheck add primary key (word);
 alter table autocheck ORDER BY word;
