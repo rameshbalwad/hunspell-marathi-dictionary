@@ -26,8 +26,10 @@ DELETE FROM `wordbase` WHERE word LIKE '%मिस्कि%' OR word LIKE 'म�
 
 # delete FROM wordbase WHERE verified > 0 AND word LIKE 'पलि%' ORDER BY word DESC LIMIT 10
 
+= आक्रमित की आक्रमीत  = 
 
 = उपहार (भेट) उपाहार (थोडा फराळ, होटेल) =
+
 
 = more words to check =
 {{{
