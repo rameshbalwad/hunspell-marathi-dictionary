@@ -42,3 +42,27 @@ WHERE int_col < char_length( s ) ;
 SELECT c AS mulakshar, count( * ) AS cnt FROM akshar GROUP BY c LIMIT 100
 
 }}}
+
+
+# Finding count of words
+
+{{{
+अं या अक्षराने सुरू होणारे सात अक्षरी शब्द
+अंधारकारमय अंमलबजावणी अंशराशीकरण
+
+खाली दिलेली क्वेरी वापरून ३ शब्द मिळवले.
+
+SELECT word
+FROM wordbase AS a
+LEFT JOIN pratya AS b ON a.word LIKE concat( '%', myprat )
+LEFT JOIN yogi AS c ON a.word LIKE concat( '%', myword )
+WHERE verified >0
+AND myprat IS NULL
+AND myword IS NULL
+AND 
+char_length(
+replace((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace((replace ((replace ((replace( word, 'ा', '' )), 'ि' , '' )), 'ी', '')), 'ु','')), 'ू' , '' )), 'े', '')), 'ै', '')), 'ो', '')) ,'ौ', '')), 'ं', '' )), 'ः', '')), '्', '')), 'ॄ', '')), 'ॢ', '')), 'ॣ', '')
+) - (char_length(word) - char_length(replace( word, '्', '' ))) = 7 and word like 'अं%' 
+limit 2000
+
+}}}
