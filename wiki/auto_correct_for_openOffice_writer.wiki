@@ -44,6 +44,49 @@ OR word LIKE (
 AND replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ) != word
 LIMIT 50000;
 
+
+insert into autocorrect
+SELECT (
+replace( replace( replace( replace( replace( replace( word, 'िक', 'ीक' ) , 'ित', 'ीत' ) , 'िय', 'ीय' ) , 'िल', 'ील' ) , 'िन', 'ीन' ) , 'िय', 'ीय' )
+), word
+FROM wordbase
+WHERE verified >0
+AND (
+word LIKE '%िक'
+OR word LIKE '%ित'
+OR word LIKE '%िय'
+OR word LIKE '%िल'
+OR word LIKE '%िन'
+OR word LIKE '%िय'
+)
+AND (
+(
+replace( replace( replace( replace( replace( replace( word, 'िक', 'ीक' ) , 'ित', 'ीत' ) , 'िय', 'ीय' ) , 'िल', 'ील' ) , 'िन', 'ीन' ) , 'िय', 'ीय' )
+) != word
+)
+LIMIT 3000; 
+
+insert into autocorrect
+SELECT (
+replace( replace( replace( replace( replace( replace( word, 'ीक', 'िक'), 'ीत', 'ित'), 'ीय', 'िय'), 'ील', 'िल'), 'ीन', 'िन'), 'ीय', 'िय')
+), word
+FROM wordbase
+WHERE verified >0
+AND (
+word LIKE '%ीक'
+OR word LIKE '%ीत'
+OR word LIKE '%ीय'
+OR word LIKE '%ील'
+OR word LIKE '%ीन'
+OR word LIKE '%ीय'
+)
+AND (
+(
+replace( replace( replace( replace( replace( replace( word, 'ीक', 'िक') ,'ीत', 'ित'), 'ीय', 'िय') , 'ील', 'िल') , 'ीन', 'िन') ,'ीय', 'िय')
+) != word
+) limit 9000;
+
+
 insert into autocorrect
 select replace(replace(word, 'ऱ्य', 'र्य'), 'ऱ्ह', 'र्ह'), word from wordbase where verified > 0 and (word like '%ऱ्य%' or word like '%ऱ्ह%') limit 3000;
 
