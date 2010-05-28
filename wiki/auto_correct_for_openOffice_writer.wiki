@@ -190,6 +190,8 @@ SELECT replace( replace( word, 'दुर्', 'दूर्' ) , 'निर्'
 FROM wordbase WHERE verified > 0 
 AND (word LIKE 'दुर्%'OR word LIKE 'निर्%') LIMIT 1000; 
 
+DELETE FROM autocorrect WHERE wrong = correct LIMIT 1000
+
 ALTER IGNORE TABLE autocorrect ADD PRIMARY KEY ( wrong, correct ) ;
 
 Database: main - Export 
