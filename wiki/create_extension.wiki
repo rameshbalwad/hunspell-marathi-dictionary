@@ -16,6 +16,9 @@ These are the steps those needs to be followed in order to publish the new versi
 # remove SQL syntax and save only the Marathi words to a file in the directory
 sed 's/INSERT INTO `toprint` (`word`) VALUES(//g' /root/Desktop/samoak.sql | sed 's/);//g' | replace "'" "" > /root/Desktop/marathi__india__dictionary-8.3-fx+tb+sm+sb.xpi_FILES/dictionaries/mr-IN.dic
 
+# Or use the following if relace command is not available
+sed 's/INSERT INTO `toprint` (`word`) VALUES(//g' samoak.sql | sed 's/);//g' | sed s/"'"/""/g > mr-IN.dic
+
 # remove the comments displayed at the top of the dump file 
 # add the count of the words at the top of this file
 
