@@ -21,6 +21,9 @@ sed 's/INSERT INTO `toprint` (`word`) VALUES(//g' samoak.sql | sed 's/);//g' | s
 
 # remove the comments displayed at the top of the dump file 
 # add the count of the words at the top of this file
+$ wc -l mr-IN.dic | awk '{print $1}' > header.txt 
+$ cat header.txt mr-IN.dic > mr-IN1.dic
+$ mv mr-IN1.dic mr-IN.dic
 
 # change directory before creating a zip file
 cd /root/Desktop/marathi__india__dictionary-8.3-fx+tb+sm+sb.xpi_FILES
