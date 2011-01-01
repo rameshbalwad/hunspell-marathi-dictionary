@@ -280,7 +280,7 @@ drop table if exists eightone;
 
 CREATE TABLE `eightone` (`secondlast` varchar(100) default NULL) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `eightone` VALUES ('गरीब'), ('खून'), ('सूड'), ('दूध'), ('कीस'), ('खीर'), ('पीक'), ('खूर'), ('पूड'), ('मूल'), ('गिऱ्हाईक'), ('पूर'), ('रीत'), ('वरीष्ठ'), ('वाईट'), ('वीट'),
+INSERT INTO `eightone` VALUES ('गरीब'), ('खून'), ('सूड'), ('दूध'), ('कीस'), ('खीर'), ('पीक'), ('खूर'), ('पूड'), ('मूल'), ('गिऱ्हाईक'), ('रीत'), ('वरीष्ठ'), ('वाईट'), ('वीट'),
 ('दीर'), ('पोलीस'), ('चूक');
 
 alter table eightone add primary key (secondlast);
