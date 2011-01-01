@@ -343,13 +343,13 @@ SELECT word FROM wordbase WHERE word LIKE '%वू' OR word LIKE '%वून' LI
 === Query ===
 SELECT word FROM wordbase WHERE word LIKE '%पूर';
 
-
+{{{
 SELECT a.word FROM wordbase AS a
 INNER JOIN ( SELECT word FROM wordbase WHERE verified > 0 AND word LIKE '%पूर' AND word != 'पूर'
 ) AS dt
 WHERE a.word LIKE concat( dt.word, '%' ) AND a.verified >0
 ORDER BY dt.word, a.word
-
+}}}
 
 === Query Result ===
 
