@@ -25,6 +25,7 @@ $ wc -l mr-IN.dic | awk '{print $1}' > header.txt
 $ cat header.txt mr-IN.dic > mr-IN1.dic
 $ mv mr-IN1.dic mr-IN.dic
 
+# change the version number
 # change directory before creating a zip file
 cd /root/Desktop/marathi__india__dictionary-8.3-fx+tb+sm+sb.xpi_FILES
 
