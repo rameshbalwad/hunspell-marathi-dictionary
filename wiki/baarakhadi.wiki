@@ -142,4 +142,14 @@ akshar 	mycharacter
 ज 	ज,जा,जि,जी,जु,जू,जे,जै,जो,जौ,जं,जः,जृ,जॄ,जॢ,जॣ
 झ 	झ,झा,झि,झी,झु,झू,झे,झै,झो,झौ,झं,झः,झृ,झॄ,झॢ,झॣ
 
+
+No word can start with a swar. So the following words are incorrect.
+
+िगडे 
+िविवध 
+
+The query to find such words...
+SELECT * FROM wordbase AS a INNER JOIN swar AS b 
+ON a.word LIKE concat( b.myswar, '%' ) WHERE b.swar_id !=1
+
 }}}
