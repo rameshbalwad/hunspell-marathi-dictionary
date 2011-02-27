@@ -19,4 +19,6 @@ DELETE FROM wordbase WHERE (word LIKE '%कोणचा%' OR word LIKE '%एक�
 
 DELETE FROM wordbase WHERE word LIKE '%़%' and word not like '%ऱ्%' limit 30
 
+DELETE FROM wordbase WHERE word REGEXP '[[:digit:]]' LIMIT 100
+
 }}}
