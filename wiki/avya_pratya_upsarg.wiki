@@ -3,7 +3,7 @@
 {{{
 drop table if exists add_type;
 create table add_type (id int not null auto_increment, word_position int, word_type varchar(255), primary key (id)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-insert into add_type (word_position, word_type) values (1, 'शब्दयोगी अव्यय'), (1, 'प्रत्यय'), (2, 'उपसर्ग');
+insert into add_type (word_position, word_type) values (2, 'शब्दयोगी अव्यय'), (2, 'प्रत्यय'), (1, 'उपसर्ग');
 
 drop table if exists add_word;
 create table add_word (id int not null auto_increment, add_type int, type_word varchar(255), wrong_type varchar(255), word_example varchar(255), primary key (id)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
