@@ -1,0 +1,85 @@
+#labels Featured,Phase-Deploy
+{{{
+
+<html>
+<form>
+
+word length <input type="text" size="3" name="wlength" /><p />
+hint: <input type="text" size="2" name="first" /> <input type="text" size="2" name="second" /> <input type="text" size="2" name="third" /> <input type="text" size="2" 
+
+name="forth" /> <input type="text" size="2" name="fifth" /> <input type="text" size="2" name="sixth" /> <input type="text" size="2" name="seventh" /> <input type="text" 
+
+size="2" name="eighth" />
+<p />
+
+<input type="submit" value="Submit" />
+
+</form>
+
+</html>
+
+
+<?php
+$username="your_name";
+$password="your_passwd";
+$database="db_name";
+$word_len=$_GET["wlength"];
+$word_first=$_GET["first"];
+$word_second=$_GET["second"];
+$word_third=$_GET["third"];
+$word_forth=$_GET["forth"];
+$word_fifth=$_GET["fifth"];
+$word_sixth=$_GET["sixth"];
+$word_seventh=$_GET["seventh"];
+$word_eighth=$_GET["eighth"];
+
+$my_word_search="%".$word_first."%".$word_second."%".$word_third."%".$word_forth."%".$word_fifth."%".$word_sixth."%".$word_seventh."%".$word_eighth;
+
+
+
+mysql_connect("host_name",$username,$password);
+@mysql_select_db($database) or die( "Unable to select database");
+
+$myquery="SET NAMES 'utf8'";
+$result=mysql_query($myquery);
+
+$query="SELECT word
+FROM wordbase AS a
+LEFT JOIN pratya AS b ON a.word LIKE concat( '%', myprat )
+
+LEFT JOIN yogi AS c ON a.word LIKE concat( '%', myword )
+
+WHERE verified > 0
+AND myprat IS NULL
+AND myword IS NULL
+AND 
+char_length(
+replace((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace((replace ((replace ((replace( word, 'ा', '' )), 'ि' , '' )), 'ी', '')), '
+
+ु','')), 'ू' , '' )), 'े', '')), 'ै', '')), 'ो', '')) ,'ौ', '')), 'ं', '' )), 'ः', '')), '्', '')), 'ॄ', '')), 'ॢ', '')), 'ॣ', '')
+
+) - (char_length(word) - char_length(replace( word, '्', '' ))) = $word_len AND word LIKE '".$my_word_search. "' order by word
+
+limit 20";
+
+$result=mysql_query($query);
+
+$num=mysql_numrows($result);
+
+mysql_close();
+
+echo "$num words found containing $word_first $word_second $word_third $word_forth $word_fifth $word_sixth $word_seventh $word_eighth AND $word_len character long <p />";
+
+$i=0;
+while ($i < $num) {
+
+$field1=mysql_result($result,$i,"word");
+
+echo "<b>$field1<br>";
+
+$i++;
+}
+
+?>
+
+}}}
