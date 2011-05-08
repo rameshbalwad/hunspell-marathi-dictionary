@@ -5,6 +5,10 @@ We can use syllabalize python script available from silpa to break-up each chara
 
 http://smc.org.in/silpa/Syllabalize
 
+The python source code of this module can be checked here...
+
+https://gist.github.com/950405
+
 The contents of the input table word_list are given below as well as the contents of the expected table syllabalize are also available. 
 There can be 1 lakh words in word list with average length of 5, so the expected row count of second table will be around half million. 
 
