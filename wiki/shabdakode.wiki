@@ -3,6 +3,11 @@ Working Example:
 
 http://saraswaticlasses.net/shabdasampada/moderate/shabdakode.php
 
+The data is generated using the "syallabalize" module. The steps of creating table toprint1 and syl1 are explained on the following wiki page.
+
+http://code.google.com/p/hunspell-marathi-dictionary/wiki/syllabalize
+
+
 {{{
 
 <html>
