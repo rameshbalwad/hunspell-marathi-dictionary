@@ -7,6 +7,11 @@ The data is generated using the "syallabalize" module. The steps of creating tab
 
 http://code.google.com/p/hunspell-marathi-dictionary/wiki/syllabalize
 
+Two tables were used in the following .php file
+
+CREATE TABLE toprint1 (id int(11) NOT NULL auto_increment, word varchar(50), PRIMARY KEY  (`id`)) DEFAULT CHARSET=utf8;
+CREATE TABLE syl1 (word_id int, char_id int, mychar varchar(100), PRIMARY KEY  (word_id, char_id)) DEFAULT CHARSET=utf8
+
 
 {{{
 
