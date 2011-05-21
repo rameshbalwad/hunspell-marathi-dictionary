@@ -5,51 +5,52 @@ Therefore the following table was created.
 drop table if exists mulakshare;
 
 CREATE TABLE `mulakshare` (
+  `hakaar` int default 0,
   `akshar` varchar(100) default NULL,
-   primary key (akshar) 
+   primary key (akshar)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('क्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ख्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ग्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('घ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES( 0, 'क्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'ख्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ग्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'घ्');
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('च्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('छ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ज्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('झ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ञ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'च्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'छ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ज्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'झ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ञ्');
 
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('ट्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ठ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ड्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ढ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ण्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ट्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'ठ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ड्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'ढ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'ण्');
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('त्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('थ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('द्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ध्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('न्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'त्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'थ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'द्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'ध्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'न्');
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('प्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('फ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ब्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('भ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('म्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'प्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'फ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ब्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'भ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'म्');
 
-INSERT INTO `mulakshare` (`akshar`) VALUES('य्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('र्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ल्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('व्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('श्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ष्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('स्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ह्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('ळ्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('क्श्');
-INSERT INTO `mulakshare` (`akshar`) VALUES('द्न्य्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'य्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'र्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'ल्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'व्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'श्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ष्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'स्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ह्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ळ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'क्श्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'द्न्य्');
 
 }}}
 
