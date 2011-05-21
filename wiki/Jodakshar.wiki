@@ -14,6 +14,8 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES( 0, 'क्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'ख्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ग्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'घ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'ङ्');
+
 
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'च्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'छ्');
@@ -49,8 +51,6 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ष्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'स्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ह्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ळ्');
-INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'क्श्');
-INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'द्न्य्');
 
 }}}
 
