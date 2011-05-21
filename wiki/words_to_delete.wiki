@@ -21,4 +21,6 @@ DELETE FROM wordbase WHERE word LIKE '%़%' and word not like '%ऱ्%' lim
 
 DELETE FROM wordbase WHERE word REGEXP '[[:digit:]]' OR word REGEXP '[[:xdigit:]]' OR word REGEXP '[[:cntrl:]]' LIMIT 500
 
+delete from wordbase where word like concat('%', right('ब्लॉं', 2), '%') limit 50
+
 }}}
