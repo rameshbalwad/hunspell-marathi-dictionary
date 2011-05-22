@@ -52,6 +52,58 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'स्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ह्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ळ्');
 
+
+
+drop table if exists vyanjan;
+
+CREATE TABLE vyanjan (
+  `hakaar` int default 0,
+  `akshar` varchar(100) default NULL,
+   primary key (akshar)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES( 0, 'क');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'ख');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ग');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'घ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ङ');
+
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'च');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'छ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ज');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'झ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ञ');
+
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ट');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'ठ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ड');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'ढ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'ण');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'त');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'थ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'द');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'ध');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'न');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'प');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'फ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ब');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'भ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'म');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'य');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'र');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'ल');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'व');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'श');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ष');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'स');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ह');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ळ');
+
 }}}
 
 The following query will generate all the possible jodakshars.
