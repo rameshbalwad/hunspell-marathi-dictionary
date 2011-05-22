@@ -124,28 +124,25 @@ INSERT IGNORE INTO `swar` (`myswar`) VALUES('े');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ै');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ो');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ौ');
-INSERT IGNORE INTO `swar` (`myswar`) VALUES('ं');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ः');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ृ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॄ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॢ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॣ');
-
 INSERT IGNORE INTO `swar` (`myswar`) select right('अँ', 1);
-INSERT IGNORE INTO `swar` (`myswar`) select right('हां', 2);
-INSERT IGNORE INTO `swar` (`myswar`) select right('हिं', 2);
-INSERT IGNORE INTO `swar` (`myswar`) select right('हीं', 2);  
-INSERT IGNORE INTO `swar` (`myswar`) select right('हें', 2);  
-INSERT IGNORE INTO `swar` (`myswar`) select right('हों', 2);
 
-INSERT IGNORE INTO `swar` (`myswar`) SELECT right( 'गुं', 2 );
-INSERT IGNORE INTO `swar` (`myswar`) select right( 'गूं', 2 ) ;
 
-INSERT IGNORE INTO `swar` (`myswar`) select right('भृं', 2);
-INSERT IGNORE INTO `swar` (`myswar`) select right('र्धाँ', 2);
+drop table if exists anuswar;
 
-INSERT IGNORE INTO `swar` (`myswar`) select right('पैं', 2);
-INSERT IGNORE INTO `swar` (`myswar`) select right('पौं', 2);
+CREATE TABLE `anuswar` (
+  `anuswar_id` int(11) NOT NULL auto_increment,
+  `my_anuswar` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`anuswar_id`),
+  UNIQUE KEY `my_anuswar` (`my_anuswar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `anuswar` VALUES(1, 'ं');
+INSERT INTO `anuswar` VALUES(2, '');
 
 
 }}}
