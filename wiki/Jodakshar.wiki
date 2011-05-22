@@ -144,6 +144,8 @@ INSERT IGNORE INTO `swar` (`myswar`) select right( 'गूं', 2 ) ;
 INSERT IGNORE INTO `swar` (`myswar`) select right('भृं', 2);
 INSERT IGNORE INTO `swar` (`myswar`) select right('र्धाँ', 2);
 
+INSERT IGNORE INTO `swar` (`myswar`) select right('पैं', 2);
+INSERT IGNORE INTO `swar` (`myswar`) select right('पौं', 2);
 
 
 }}}
