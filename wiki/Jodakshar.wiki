@@ -104,6 +104,34 @@ INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'स');
 INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ह');
 INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ळ');
 
+
+drop table if exists swar;
+
+CREATE TABLE `swar` (
+   swar_id int not null auto_increment,
+  `myswar` varchar(100) NOT NULL default '',
+   PRIMARY KEY (swar_id),  
+   KEY  (`myswar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `swar` (`myswar`) VALUES('');
+INSERT INTO `swar` (`myswar`) VALUES('ा');
+INSERT INTO `swar` (`myswar`) VALUES('ि');
+INSERT INTO `swar` (`myswar`) VALUES('ी');
+INSERT INTO `swar` (`myswar`) VALUES('ु');
+INSERT INTO `swar` (`myswar`) VALUES('ू');
+INSERT INTO `swar` (`myswar`) VALUES('े');
+INSERT INTO `swar` (`myswar`) VALUES('ै');
+INSERT INTO `swar` (`myswar`) VALUES('ो');
+INSERT INTO `swar` (`myswar`) VALUES('ौ');
+INSERT INTO `swar` (`myswar`) VALUES('ं');
+INSERT INTO `swar` (`myswar`) VALUES('ः');
+INSERT INTO `swar` (`myswar`) VALUES('ृ');
+INSERT INTO `swar` (`myswar`) VALUES('ॄ');
+INSERT INTO `swar` (`myswar`) VALUES('ॢ');
+INSERT INTO `swar` (`myswar`) VALUES('ॣ');
+
+
 }}}
 
 The following query will generate all the possible jodakshars.
