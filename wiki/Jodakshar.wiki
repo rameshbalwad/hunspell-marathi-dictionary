@@ -129,7 +129,7 @@ INSERT IGNORE INTO `swar` (`myswar`) VALUES('ृ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॄ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॢ');
 INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॣ');
-INSERT IGNORE INTO `swar` (`myswar`) select right('अँ', 1);
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ँ');
 
 
 drop table if exists anuswar;
