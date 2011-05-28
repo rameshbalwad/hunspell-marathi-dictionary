@@ -51,6 +51,7 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ष्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'स्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ह्');
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ळ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, '');
 
 
 
