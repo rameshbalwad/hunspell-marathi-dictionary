@@ -199,6 +199,25 @@ SELECT * FROM wordbase INNER JOIN rulefive ON word LIKE concat( '%', myword, '%'
 
 ------
 
+
+Query to find deerghant words
+{{{
+select a.word_id, a.char_id FROM syl1 AS a
+INNER JOIN (
+SELECT word_id, max(char_id) FROM syl1 GROUP BY word_id 
+) AS dt
+ON dt.word_id = a.word_id and dt.char_id = a.char_id
+WHERE (a.mychar like ('%ा%) OR 
+a.mychar like ('%ी%') OR 
+a.mychar like ('%ू%') OR 
+a.mychar like ('%ो%') OR 
+a.mychar like ('%े%') 
+)
+}}}
+
+
+------
+
 = Rule7_1_Akarant  = 
 
 === मराठी अ-कारान्त शब्दाचे उपान्त्य इकार व उकार दीर्घ लिहावेत. ===
