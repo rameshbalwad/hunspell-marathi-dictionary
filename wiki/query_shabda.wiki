@@ -363,6 +363,23 @@ INNER JOIN toprint1 as c on c.id = a.word_id
 WHERE  a.mychar like ('%ई%')  OR a.mychar like ('%ऊ%') 
 }}}
 
+=== नियम ८.४ पुल्लिंगी शब्दाच्या शेवटी 'सा' असल्यास त्या जागी उभयवचनी सामान्यरूपाच्या वेळी 'शा' होतो.('श्या' होत नाही) ===
+
+    उदाहरणार्थ: घसा-घशाला,घशांना,ससा-सशाला,सशांना
+
+=== नियम ८.५ पुल्लिंगी शब्दाच्या शेवटी 'जा' असल्यास उभयवचनी सामान्यरूपाच्या वेळी तो तसाच राहतो (त्याचा 'ज्या' होत नाही.)
+
+    उदाहरणार्थ:दरवाजा- दरवाजाला,दरवाजांना; मोजा-मोजाला,मोजांना.
+
+{{{
+select a.word_id, a.char_id, c.word FROM syl1 AS a
+INNER JOIN (
+SELECT word_id, max(char_id) as max_char_id FROM syl1 GROUP BY word_id 
+) AS dt
+ON dt.word_id = a.word_id and dt.max_char_id-1 = a.char_id
+INNER JOIN toprint1 as c on c.id = a.word_id
+WHERE  a.mychar like ('%श्या%')  OR a.mychar like ('%ज्या%') 
+}}}
 
 
 === नियम ८.६ तीन अक्षरी शब्दातील मधले अक्षर 'क' चे किंवा 'प' चे द्वित्व असेल तर उभयवचनी सामान्यरूपाच्या वेळी हे द्वित्व नाहीसे होते. ===
