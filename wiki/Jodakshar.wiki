@@ -5,9 +5,11 @@ Therefore the following table was created.
 drop table if exists mulakshare;
 
 CREATE TABLE `mulakshare` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `hakaar` int default 0,
   `akshar` varchar(100) default NULL,
-   primary key (akshar)
+   primary key (id),
+   key (akshar)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES( 0, 'क्');
@@ -58,9 +60,11 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, '');
 drop table if exists vyanjan;
 
 CREATE TABLE vyanjan (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `hakaar` int default 0,
   `akshar` varchar(100) default NULL,
-   primary key (akshar)
+   primary key (id),
+   key (akshar)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES( 0, 'क');
