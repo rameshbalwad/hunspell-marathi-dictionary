@@ -270,6 +270,27 @@ AND substring( word, -2, 1 ) IN ('ि', 'ु')
 
 ------
 
+=== नियम ७.२ मराठी शब्दांतील अनुस्वार,विसर्ग,किंवा जोडाक्षर, यांच्या पूर्वीचे इकार व उकार सामान्यत: ऱ्हस्व लिहावेत. ===
+
+    उदाहरणार्थ: चिंच, डाळिंब, भिंग, खुंटी, पुंजका, भुंगा, छि:, थु:, किल्ला, भिस्त, विस्तव, कुस्ती, पुष्कळ, मुक्काम.
+
+परंतु तत्सम शब्दांत ते मुळाप्रमाणे ऱ्हस्व, किंवा दीर्घ लिहावेत.
+
+    उदाहरणार्थ: अरविंद, चिंतन, कुटुंब, चुंबक, नि:पक्षपात, नि:शस्त्र, चतू:सूत्री, दु:ख, कनिष्ठ, मित्र, गुप्त, पुण्य, ईश्वर, नावीन्य, पूज्य, शून्य.
+
+{{{
+select *, a.word_id, a.char_id, c.word FROM syl1 AS a
+INNER JOIN syl1 AS b on a.word_id = b.word_id and a.char_id = b.char_id
+INNER JOIN syl1 AS dt ON dt.word_id = a.word_id and dt.char_id-1 = a.char_id
+INNER JOIN toprint1 as c on c.id = a.word_id
+WHERE dt.mychar like ('%ं%')
+AND (b.mychar like ('%ी%') OR b.mychar like ('%ू%') )
+AND (c.word not like ('%चं') AND c.word not like ('%नं') AND c.word not like ('%नंतर') 
+)
+group by a.word_id
+}}}
+
+
 = Rule_8_RhaswaDeergha = 
 
 === नियम ८.१ उपान्त्यी दीर्घ ई किंवा ऊ असलेल्या मराठी शब्दांचा उपान्त्य ई-कार किंवा ऊ-कार उभयवचनी सामान्यरूपांच्या वेळी र्‍ह्स्व लिहावा. ===
