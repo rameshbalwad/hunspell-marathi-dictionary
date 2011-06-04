@@ -325,6 +325,23 @@ WHERE (word LIKE 'जीवा%' OR word LIKE 'जीवां%') AND verified >
 }}}
 
 
+
+=== नियम ८.३ शब्दांचे उपान्त्य अक्षर 'ई' किंवा 'ऊ' असेल तर अशा शब्दाच्या उभयवचनी सामान्यरूपाच्या वेळी 'ई' च्या जागी 'य' आणि 'उ' च्या जागी 'व' असे आदेश होतात. ===
+
+उदाहरणार्थ:काईल-कायलीला,देउळ-देवळाला,देवळांना
+
+{{{
+select a.word_id, a.char_id, c.word FROM syl1 AS a
+INNER JOIN (
+SELECT word_id, max(char_id) as max_char_id FROM syl1 GROUP BY word_id 
+) AS dt
+ON dt.word_id = a.word_id and dt.max_char_id-1 = a.char_id
+INNER JOIN toprint1 as c on c.id = a.word_id
+WHERE  a.mychar like ('%ई%')  OR a.mychar like ('%ऊ%') 
+}}}
+
+
+
 === नियम ८.६ तीन अक्षरी शब्दातील मधले अक्षर 'क' चे किंवा 'प' चे द्वित्व असेल तर उभयवचनी सामान्यरूपाच्या वेळी हे द्वित्व नाहीसे होते. ===
 
 # उदा: रक्कम-रकमेला,रकमांना; छप्पर-छपराला,छपरांना
