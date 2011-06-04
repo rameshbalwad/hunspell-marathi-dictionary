@@ -171,29 +171,6 @@ INSERT INTO `rulefive` VALUES ('अंगुलि'), ('अंगुली'), ('
 SELECT * FROM wordbase INNER JOIN rulefive ON word LIKE concat( '%', myword, '%' ) ORDER BY word LIMIT 30
 }}}
 
-=== Query to find words  र्‍हस्वान्त ===
-{{{SELECT word FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' ORDER BY word LIMIT 10}}}
-
-==== Query Results ====
-
-
- अंगयष्टि 
- अंतःकरणशुद्धि 
- अंतरदृष्टि 
- अंत्येष्टि 
- अगस्ति 
- अग्नि 
- अणि 
- अति 
- अतिथि 
-
-240 words found
-
-
-delete FROM wordbase WHERE word LIKE '%ि' OR word LIKE '%ु' LIMIT 200
-
-ही क्वेरी वापरून र्‍हस्वान्त शब्द काढून टाकले.
-
 ------
 
 = Rule_6_Deerghant  =
