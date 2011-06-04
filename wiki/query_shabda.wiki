@@ -385,15 +385,16 @@ WHERE  a.mychar like ('%श्या%')  OR a.mychar like ('%ज्या%')
 === नियम ८.६ तीन अक्षरी शब्दातील मधले अक्षर 'क' चे किंवा 'प' चे द्वित्व असेल तर उभयवचनी सामान्यरूपाच्या वेळी हे द्वित्व नाहीसे होते. ===
 
 # उदा: रक्कम-रकमेला,रकमांना; छप्पर-छपराला,छपरांना
-
+{{{
 SELECT word FROM wordbase WHERE verified >0 AND (word LIKE '%क्क%' OR word LIKE '%प्प%') ORDER BY word LIMIT 0 , 30
+}}}
 
 === नियम ८.७ मधल्या 'म' पूर्वीचे अनुस्वारसहित अक्षर उभयवचनी सामान्यरूपाच्या वेळी अनुस्वारविरहित होते. ===
 
 # उदाहरणार्थ:किंमत-किमतीला,किमतींना; गंमत-गमतीला,गमतींचा
-
+{{{
 SELECT word FROM wordbase WHERE word LIKE '%ंम%' LIMIT 1000
-
+}}}
 Query Results
 
 कार्यालयांमध्ये, किंमत, किंमतीमुळे, किंमतीला 
@@ -405,8 +406,9 @@ Query Results
 
 
 === Query ===
+{{{
 SELECT word FROM wordbase WHERE word LIKE '%वू' OR word LIKE '%वून' LIMIT 100
-
+}}}
 ==== Query Result ====
 
  अडवू
@@ -469,10 +471,10 @@ select * from wordbase as a inner join city as b on word like concat('%', pur, '
 = Rule10_konta  = 
 
 === नियम १० "कोणता,एखादा' ही रूपे लिहावीत. 'कोणचा,एकादा' ही रूपे लिहू नयेत. ===
-
+{{{
 SELECT word FROM wordbase WHERE verified >0 AND (word LIKE '%कोणचा%' OR word LIKE '%एकादा%'
 ) ORDER BY word 
-
+}}}
 # 2 words found एकादा, एकादाच - deleted
 
 
@@ -485,9 +487,9 @@ SELECT word FROM wordbase WHERE verified >0 AND (word LIKE '%कोणचा%' O
 # उदा: दुडुदुडु,रुणुझुणु,लुटुलुटु
 
 # पुनरुक्त शब्द शोधण्यासाठी खालील क्वेरी वापरली
-
+{{{
 SELECT word FROM wordbase WHERE left( word, character_length( word ) /2 ) = right( word, character_length( word ) /2 ) ORDER BY word 
-
+}}}
 ------
 
 
@@ -495,7 +497,9 @@ SELECT word FROM wordbase WHERE left( word, character_length( word ) /2 ) = righ
 # लेखनात पात्राच्या किंवा वक्त्याच्या तोंडी बोलण्याची भाषा घालावी लागते.त्या वेळी तिचे स्वरूप बोलण्यातील उच्चाराप्रमाणे अनुस्वारयुक्त असावे. उदाहरणार्थ: 'असं केलं , मी म्हटलं; त्यांनी सांगितलं अन्य प्रसंगी ही रूपे ए-कारान्त लिहावीत. उदाहरणार्थ : असे केले; मी म्हटले; त्यांनी सांगितले
 
 == Query ==
+{{{
 SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE word LIKE '%ं' LIMIT 100
+}}}
 
 == Query Result ==
  अंगिकारणं  	ं
@@ -516,9 +520,9 @@ SELECT word, substring( word, -1, 1 ) FROM wordbase WHERE word LIKE '%ं' LIMIT
 # उदाहरणार्थ :'एम.ए. , पीएच.डी., अमेरिकन,वॉशिंग्टन
 
 === Query ===
- 
+{{{ 
 SELECT word FROM wordbase WHERE substring( word, -1, 1 ) = '्' LIMIT 1000
-
+}}}
 ==== Query Result ====
 
  लख्खकन्
@@ -530,10 +534,11 @@ SELECT word FROM wordbase WHERE substring( word, -1, 1 ) = '्' LIMIT 1000
 105 words found
 
 === Query to update and remove the  व्यंजनान्त ===
+{{{
 update ignore wordbase set word = left( word, (char_length( word ) -1 )) WHERE substring( word, -1, 1 ) = '्' 
 
 delete from wordbase WHERE substring( word, -1, 1 ) = '्' 
-
+}}}
 
 ------
 
@@ -542,9 +547,9 @@ delete from wordbase WHERE substring( word, -1, 1 ) = '्'
 === नियम १७ 'इत्यादी' व 'ही' हे शब्द दीर्घांन्त लिहावेत . 'अन्' हा शब्द व्यंजनान्त लिहावा. ===
 
 # इत्यादि, हि आणि अन हे चुकीचे शब्द काढून टाकले. त्याची क्वेरी...
-
+{{{
 DELETE FROM wordbase WHERE word = 'इत्यादि' OR word = 'हि' OR word = 'अन' LIMIT 3
-
+}}}
 
 ------
 
