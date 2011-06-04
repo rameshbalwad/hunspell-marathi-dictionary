@@ -326,6 +326,29 @@ WHERE (word LIKE 'जीवा%' OR word LIKE 'जीवां%') AND verified >
 
 
 
+=== नियम ८.२ मराठी शब्द तीन अक्षरी असून त्याचे पहिले अक्षर दीर्घ असेल तर अशा शब्दाच्या सामान्यरूपात उपान्त्य ई-ऊ यांच्या जागी 'अ' आल्याचे दिसते. ===
+
+    उदाहरणार्थ:बेरीज-बेरजेला,बेरजांना,लाकूड-लाकडाला,लाकडांना.
+        मात्र पहिले अक्षर र्‍ह्स्वअसल्यास हा 'अ' विकल्पाने (पर्यायी) होतो.
+    उदाहरणार्थ:परीट-पर(रि)टास,पर(रि)टांना
+
+{{{
+select a.word_id, a.char_id, c.word FROM syl1 AS a
+INNER JOIN (
+SELECT word_id, max(char_id) as max_char_id FROM syl1 GROUP BY word_id having max_char_id = 3
+) AS dt
+ON dt.word_id = a.word_id 
+INNER JOIN 
+syl1 AS dt1
+ON dt1.word_id = a.word_id and dt.max_char_id-1 = dt1.char_id
+INNER JOIN toprint1 as c on c.id = a.word_id
+WHERE a.char_id = 1 
+AND (a.mychar like ('%ा%') OR a.mychar like ('%ी%') OR a.mychar like ('%ू%') OR a.mychar like ('%ो%') OR a.mychar like ('%े%') ) 
+AND dt1.mychar like ('%ई%')  OR dt1.mychar like ('%ऊ%') 
+group by a.word_id
+}}}
+
+
 === नियम ८.३ शब्दांचे उपान्त्य अक्षर 'ई' किंवा 'ऊ' असेल तर अशा शब्दाच्या उभयवचनी सामान्यरूपाच्या वेळी 'ई' च्या जागी 'य' आणि 'उ' च्या जागी 'व' असे आदेश होतात. ===
 
 उदाहरणार्थ:काईल-कायलीला,देउळ-देवळाला,देवळांना
