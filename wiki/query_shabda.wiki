@@ -96,6 +96,14 @@ WHERE ( a.mychar like '%य%' OR a.mychar like '%र%' OR a.mychar like '%ल%' 
 
 # उदाहरणार्थ: पाटी, जादू, पैलू
 
+काही अपवाद वगळता सर्व र्‍हस्वांत शब्द काढले.
+
+{{{
+DELETE FROM wordbase WHERE (word LIKE '%ि' OR word LIKE '%ु' OR word like '%्') 
+and (word not in ('परंतु', 'यथामति', 'तथापि', 'कदापि', 'अद्यापि', 'आणि', 'नि', 'लुटुलुटु', 'तुरुतुरु', 'झुंजुमुंजु', 'झुरुमुरु', 'हळुहळु', 'खुदुखुदु', 'अन्')) limit 200
+
+}}}
+
 === नियम ५.२ 'परंतु, यथामति, तथापि', ही तत्सम अव्यये र्‍हस्वान्त लिहावीत. ===
 DELETE FROM wordbase WHERE word = 'परंतू' OR word = 'यथामती' OR word = 'तथापी' LIMIT 3
 
