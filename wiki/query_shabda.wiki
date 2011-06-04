@@ -70,6 +70,19 @@ insert ignore into SELECT left(word, (char_length(word)-1)), '20100502' FROM wor
 ह्या व अशा अनेक शब्दांवर शेवटी अनुस्वार येणं जरूरीचं आहे. म्हणून ही क्वेरी वापरली नाही.
 
 
+------
+
+= Rule_2_dot_1_Anuswar = 
+नियम २.१
+
+य्, र्, ल्, व्, श्, ष्, स्, ह् यांच्यापूर्वी येणार्‍या अनुस्वारांबद्दल केवळ शीर्षबिंदू द्यावा. 'ज्ञ' पूर्वीचा नासोच्चारही केवळ शीर्षबिंदूने दाखवावा. उदाहरणार्थ: संयम, संरचना, संलग्न, संवाद, दंश, दंष्ट्रा, मांस, सिंह, संज्ञा' हे शब्द 'संय्यम, संव्रचना, संल्लग्न, संव्वाद, दंव्श, दंव्ष्ट्रा, मांव्स, सिंव्ह, संव्ज्ञा' असे लिहू नयेत.
+{{{
+SELECT a.word_id, a.char_id, a.mychar, b.mychar, c.word 
+FROM syl1 as a inner join syl1 as b on a.word_id = b.word_id and a.char_id-1 = b.char_id  
+inner join toprint1 as c on c.id = a.word_id 
+WHERE ( a.mychar like '%य%' OR a.mychar like '%र%' OR a.mychar like '%ल%' OR a.mychar like '%व%' OR a.mychar like '%श%' OR a.mychar like '%ष%' OR a.mychar like '%स%' OR a.mychar like '%ह%'
+) and b.mychar like '%ं%' group by a.word_id
+}}}
 
 ------
 
