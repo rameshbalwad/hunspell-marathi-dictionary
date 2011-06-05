@@ -5,7 +5,7 @@ Therefore the following table was created.
 drop table if exists mulakshare;
 
 CREATE TABLE `mulakshare` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT(2) ZEROFILL NOT NULL AUTO_INCREMENT,
   `hakaar` int default 0,
   `akshar` varchar(100) default NULL,
    primary key (id),
@@ -60,7 +60,7 @@ INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, '');
 drop table if exists vyanjan;
 
 CREATE TABLE vyanjan (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT(2) ZEROFILL NOT NULL AUTO_INCREMENT,
   `hakaar` int default 0,
   `akshar` varchar(100) default NULL,
    primary key (id),
