@@ -3,6 +3,8 @@ Here is an example of how many words can be generated from a single word "घो
 
 === घोडा शब्दाची सामान्यरूपे ===
 
+drop table if exists samanyaroop;
+
 CREATE TABLE samanyaroop (word varchar(50) NOT NULL, PRIMARY KEY  (word)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
