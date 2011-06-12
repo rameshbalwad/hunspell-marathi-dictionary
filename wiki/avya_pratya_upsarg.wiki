@@ -11,7 +11,9 @@ drop table if exists add_word;
 create table add_word (id int not null auto_increment, 
 add_type int, type_word varchar(255), wrong_type varchar(255), 
 word_example varchar(255), unique key (add_type, type_word), 
-primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+primary key (id),
+FOREIGN KEY (`add_type`) references add_type (id) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `add_word` VALUES
 (1, 1, 'करिता', 'करीता', 'याकरिता'),
