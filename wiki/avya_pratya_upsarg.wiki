@@ -209,6 +209,7 @@ INSERT INTO `add_word` VALUES
 (198, 1, 'स्तव', '', ''), 
 (199, 4, 'हून', '', '');
 
+select type_word, concat('घोड्या', type_word), concat('घोड्यां', type_word) from add_word where add_type != 3 order by add_type = 4;
 
 SELECT a.word, b.type_word, c.word_type FROM wordbase AS a
 INNER JOIN add_word AS b ON a.word LIKE concat( "%", b.type_word )
