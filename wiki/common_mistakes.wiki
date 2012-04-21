@@ -23,9 +23,11 @@ _____
 चिता व चिंता यातील साम्य दाखविणारे संस्कृतमधील एक सुभाषित प्रसिद्धच आहे.
 "पोळ्याप्रमाणेच पोळ्याशी " हे दोन शब्द काढले. 
 
-update wordbase set verified = DATE_FORMAT( current_date( ) , '%Y%m%d' ) * -1 WHERE
+update wordbase set verified = DATE_FORMAT( current_date( ) , '%Y%m%d' ) * -1 
+WHERE verified > 0 and (
 word like ('%पाह्यलानंतर%') or word like ('%पुर्ण%') or word like ('%पुर्नअहवाल%') or word like ('%पुर्नगुंतवणुकीसाठी%') or word like ('%पूर्वाधच%') or word like ('%पूर्वाधात%') or word like ('%पूर्वाधातली%') or word like ('%पोर्टेटच%') or word like ('%पोळ्याप्रमाणेच%') or word like ('%पोळ्याशी%') or word like ('%प्रकाशची%') or word like ('%प्रदुषण%') or word like ('%प्रश्नचिह्न%') 
-limit 45
+)
+limit 20
 
 _____
 
