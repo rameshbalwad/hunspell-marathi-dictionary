@@ -34,6 +34,11 @@ _____
 चुकीचे शब्द : पोटॅशियम पोटेन्शियल पोलिटिशियन फ्यूरियस बम्बार्डियर बम्बार्डियरचा   
 योग्य शब्द : पोटॅशिअम पोटेन्शिअल पोलिटिशिअन फ्यूरिअस बम्बार्डिअर बम्बार्डिअरचा   
 
-select * from wordbase where verified > 0 and word like ('%पोटॅशियम%') or word like ('%पोटेन्शियल%') or word like ('%पोलिटिशियन%')  or word like ('%फ्यूरियस%') or word like ('%बम्बार्डियर%')  
+select * from wordbase where verified > 0 and (
+word like '%यम' OR word like  '%यल' OR word like '%यन' OR word like  '%यस' OR word like '%यर'
+)
+
+No changes made. Need second opinion.
+
 
 }}}
