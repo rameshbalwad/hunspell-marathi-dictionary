@@ -2,14 +2,15 @@
 खाली दिलेल्या टेबलमध्ये सर्व प्रकारचे अव्यय, उपसर्ग वगैरे जमा केले. आता एकाच सिलेक्ट क्वेरीने चुकीचे शब्द शोधणे शक्य होईल असे दिसते.
 
 {{{
+drop table if exists add_word;
 drop table if exists add_type;
+
 create table add_type (id int not null auto_increment, 
 word_position int, word_type varchar(255), 
 primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-insert into add_type (word_position, word_type) values (1, 2, 'शब्दयोगी अव्यय'), (2, 2, 'प्रत्यय'), 
+insert into add_type values (1, 2, 'शब्दयोगी अव्यय'), (2, 2, 'प्रत्यय'), 
 (3, 1, 'उपसर्ग'), (4, 2, 'विभक्ती प्रत्यय');
 
-drop table if exists add_word;
 create table add_word (id int not null auto_increment, 
 add_type int, type_word varchar(255), wrong_type varchar(255), 
 word_example varchar(255), unique key (add_type, type_word), 
@@ -17,7 +18,7 @@ primary key (id),
 FOREIGN KEY (`add_type`) references add_type (id) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
+REPLACE INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
 (1, 'करिता', 'करीता', 'याकरिता'),
 (2, 'करी', 'करि', 'गावकरी'),
 (2, 'करू', 'करु', 'यात्रेकरू'),
