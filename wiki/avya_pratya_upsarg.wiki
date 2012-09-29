@@ -17,7 +17,7 @@ primary key (id),
 FOREIGN KEY (`add_type`) references add_type (id) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `add_word` VALUES
+INSERT INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
 (1, 'करिता', 'करीता', 'याकरिता'),
 (2, 'करी', 'करि', 'गावकरी'),
 (2, 'करू', 'करु', 'यात्रेकरू'),
