@@ -1,7 +1,7 @@
 #labels Phase-Design,Phase-QA,Phase-Support
 खाली दिलेल्या टेबलमध्ये सर्व प्रकारचे अव्यय, उपसर्ग वगैरे जमा केले. आता एकाच सिलेक्ट क्वेरीने चुकीचे शब्द शोधणे शक्य होईल असे दिसते.
 
-{{
+{{{
 drop table if exists add_type;
 create table add_type (id int not null auto_increment, 
 word_position int, word_type varchar(255), 
