@@ -19,7 +19,7 @@ primary key (id),
 FOREIGN KEY (`add_type`) references add_type (id) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-REPLACE INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
+INSERT INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
 (3, 'अति', 'अती', 'अतिप्रसंग'),
 (3, 'अधि', 'अधी', 'अधिपती'),
 (3, 'अनु', 'अनू', 'अनुक्रम'),
@@ -143,7 +143,7 @@ REPLACE INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
 (2,  'हून', '', '');
 
 
-INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
+INSERT INTO `add_word` (add_type, type_word, wrong_type, word_example) VALUES
 (3, 'उप', 'ऊप', 'उपजीविका'),
 (3, 'नि', 'नी', 'नियोग'),
 (3, 'नि:', 'नी:', 'नियोग'),
