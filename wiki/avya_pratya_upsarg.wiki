@@ -2,18 +2,19 @@
 खाली दिलेल्या टेबलमध्ये सर्व प्रकारचे अव्यय, उपसर्ग वगैरे जमा केले. आता एकाच सिलेक्ट क्वेरीने चुकीचे शब्द शोधणे शक्य होईल असे दिसते.
 
 {{{
+
+
 drop table if exists add_word;
 drop table if exists add_type;
 
 create table add_type (id int not null auto_increment, 
 word_position int, word_type varchar(255), 
 primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-insert into add_type values (1, 2, 'शब्दयोगी अव्यय'), (2, 2, 'प्रत्यय'), 
-(3, 1, 'उपसर्ग'), (4, 2, 'विभक्ती प्रत्यय');
+insert into add_type values (1, 2, 'शब्दयोगी अव्यय'), (2, 2, 'प्रत्यय'), (3, 1, 'उपसर्ग'), (4, 2, 'विभक्ती प्रत्यय');
 
 create table add_word (id int not null auto_increment, 
 add_type int, type_word varchar(255), wrong_type varchar(255), 
-word_example varchar(255), unique key (add_type, type_word), 
+word_example varchar(255), 
 primary key (id),
 FOREIGN KEY (`add_type`) references add_type (id) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -233,7 +234,6 @@ INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VA
 (1, 'व्यतिरिक्त', 'व्यतीरीक्त', ''),
 (1, 'शिवाय', 'शीवाय', ''),
 (2, 'शी', 'शि', ''),
-(1, 'शील', 'शिल', ''),
 (1, 'संबंधी', 'संबंधि', ''),
 (1, 'समीप', 'समिप', ''),
 (1, 'सहित', 'सहीत', ''),
@@ -241,8 +241,6 @@ INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VA
 (1, 'ही', 'हि', ''),
 (2, 'हून', 'हुन', ''),
 (1, 'अंती', 'अंति', ''),
-(1, 'अनीय', '', ''),
-(1, 'अनु', 'अनू', ''),
 (1, 'अनुसार', 'अनूसार', ''),
 (1, 'अर्थी', 'अर्थि', ''),
 (2, 'आई', '', ''),
@@ -260,7 +258,6 @@ INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VA
 (2, 'ईक', '', ''),
 (2, 'ईत', '', ''),
 (2, 'ईव', '', ''),
-(2, 'उत्', '', ''),
 (1, 'उत्तर', '', ''),
 (2, 'उपर', '', ''),
 (1, 'उपरांत', '', ''),
@@ -309,7 +306,6 @@ INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VA
 (1, 'पूर्वी', 'पुर्वि', ''),
 (1, 'पेक्षा', '', ''),
 (1, 'प्रत', '', ''),
-(1, 'प्रति', 'प्रती', ''),
 (1, 'प्रमाणे', '', ''),
 (1, 'प्रित्यर्थ', 'प्रीत्यर्थ', ''),
 (1, 'फक्त', '', ''),
@@ -344,6 +340,7 @@ INSERT IGNORE INTO `add_word` (add_type, type_word, wrong_type, word_example) VA
 (1, 'सुद्धा', 'सूद्धा', ''),
 (1, 'स्तव', '', ''), 
 (4, 'हून', 'हुन', '');
+
 
 select type_word, concat('घोड्या', type_word), concat('घोड्यां', type_word) 
 from add_word where add_type != 3 order by add_type = 4;
