@@ -250,13 +250,17 @@ select type_word, concat('घोड्या', type_word), concat('घोड्�
 from add_word where add_type != 3 order by add_type = 4;
 
 
-SELECT a.word, b.type_word,  c.word_type FROM wordbase AS a
-INNER JOIN add_word AS b ON a.word LIKE concat( "%", b.wrong_type )
-INNER JOIN add_type AS c on b.add_type = c.id
-WHERE a.verified > 0 and c.word_position = 2 and b.wrong_type NOT IN
-('', 'िक',  'ीक',  'ित',  'ीत',  'ीय', 'ील', 'िन','िय')
-group by a.word order by b.wrong_type, a.word
-limit 1000
 
+SELECT a.word
+FROM wordbase AS a INNER JOIN add_word AS b ON a.word LIKE concat( "%", b.wrong_type )
+INNER JOIN add_type AS c ON b.add_type = c.id
+WHERE a.verified > 0 AND c.word_position = 'right'
+AND b.wrong_type NOT
+IN (
+'', 'िक', 'ीक', 'ित', 'ीत', 'ीय', 'ील', 'िन', 'िय', 'वीन', 'वीशी', 'नीशी'
+)
+GROUP BY a.word
+ORDER BY b.wrong_type, a.word
+LIMIT 1000 
 
 }}}
