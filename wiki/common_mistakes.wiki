@@ -101,9 +101,8 @@ alter table check_again add key (check_word);
 select * from wordbase as a inner join check_again as b on a.word like concat('%', check_word, '%') where verified > 0 limit 100
 
 Two words found from the results of the above script.
-
-ध्वनीफीतही प्रगतीशील 
-
 Both the words removed.
+
+delete from wordbase where word in ('प्रगतीशील', 'ध्वनीफीतही') limit 10
 
 }}}
