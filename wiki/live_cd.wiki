@@ -13,10 +13,10 @@ A new Live Ubuntu CD is now available with all the feature built-in.
   * fonts
   * anaconda for python development
 
-== The 32 bit version: ==
+== The 32 bit version: (1.6 GB) ==
 gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-i386.iso
 
-== The 64 bit version: ==
+== The 64 bit version: (1.6 GB) ==
 
 gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-amd64.iso
 
