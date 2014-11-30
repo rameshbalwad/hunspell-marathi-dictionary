@@ -1,7 +1,7 @@
 #labels Phase-Implementation,Phase-Deploy,Featured
 =Marathi Ubuntu Live CD=
 
-A new Live Ubuntu CD is now available with all the feature built-in.
+A new Live Ubuntu CD is now available with all the features built-in.
 
   * Libre office spell check extension
   * Firefox spell check extension
