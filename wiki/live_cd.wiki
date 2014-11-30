@@ -18,7 +18,7 @@ gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-i386.iso
 
 == The 64 bit version: ==
 
-gamabhana/ubuntu-14.10-desktop-customised-amd64.iso
+gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-amd64.iso
 
 === The screen shot is available here: ===
 
