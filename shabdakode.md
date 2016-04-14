@@ -1,0 +1,138 @@
+Working Example:
+
+http://saraswaticlasses.net/shabdasampada/moderate/shabdakode.php
+
+The data is generated using the "syallabalize" module. The steps of creating table toprint1 and syl1 are explained on the following wiki page.
+
+http://code.google.com/p/hunspell-marathi-dictionary/wiki/syllabalize
+
+Two tables were used in the following .php file
+
+CREATE TABLE toprint1 (id int(11) NOT NULL auto\_increment, word varchar(50), PRIMARY KEY  (`id`)) DEFAULT CHARSET=utf8;
+CREATE TABLE syl1 (word\_id int, char\_id int, mychar varchar(100), PRIMARY KEY  (word\_id, char\_id)) DEFAULT CHARSET=utf8
+
+
+```
+
+<html>
+<form>
+
+<img src="http://code.google.com/p/hunspell-marathi-dictionary/logo?cct=1261311273">  &nbsp;
+<a href="http://mr.upakram.org/node/3274#comment-56677"> more info </a>
+<p>
+
+word length <input type="text" size="3" name="wlength" /><p />
+
+hint: <input type="text" size="2" name="first" /> 
+<input type="text" size="2" name="second" /> 
+<input type="text" size="2" name="third" /> 
+<input type="text" size="2" name="forth" /> 
+<input type="text" size="2" name="fifth" /> 
+<input type="text" size="2" name="sixth" /> 
+<input type="text" size="2" name="seventh" /> 
+<input type="text" size="2" name="eighth" />
+<p />
+
+<input type="submit" value="Submit" />
+
+
+</form>
+
+</html>
+
+<?php
+$username="******";
+$password="******";
+$database="******";
+$word_len=$_GET["wlength"];
+$word_first=$_GET["first"];
+$word_second=$_GET["second"];
+$word_third=$_GET["third"];
+$word_forth=$_GET["forth"];
+$word_fifth=$_GET["fifth"];
+$word_sixth=$_GET["sixth"];
+$word_seventh=$_GET["seventh"];
+$word_eighth=$_GET["eighth"];
+
+
+$my_word_search=$word_first."%".$word_second."%".$word_third."%".$word_forth."%".$word_fifth."%".$word_sixth."%".
+
+$word_seventh."%".$word_eighth;
+
+@mysql_connect("server.net",$username,$password);
+@mysql_select_db($database) or die( "Unable to select database");
+
+$myquery="SET NAMES 'utf8'";
+$result=@mysql_query($myquery);
+
+
+$query="SelecT word, max( xyz.char_id ) AS mycount from toprint1 as a INNER JOIN syl1 AS xyz ON xyz.word_id = a.id ";
+if($_GET["first"] != '')
+{
+$query.="inner join syl1 as b on b.word_id = a.id and b.char_id = '1' AND b.mychar = '".$_GET["first"]."' ";
+}
+if($_GET["second"] != '')
+{
+$query.="inner join syl1 as c on c.word_id = a.id and c.char_id = '2' AND c.mychar ='".$_GET["second"]."' ";
+}
+if($_GET["third"] != '')
+{
+$query.="inner join syl1 as d on d.word_id = a.id and d.char_id = '3' AND d.mychar = '".$_GET["third"]."' ";
+}
+if($_GET["forth"] !='')
+{
+$query.="inner join syl1 as e on e.word_id = a.id and e.char_id = '4' AND e.mychar = '".$_GET["forth"]."' ";
+}
+
+if($_GET["fifth"] !='')
+{
+$query.="inner join syl1 as f on f.word_id = a.id and f.char_id = '5' AND f.mychar = '".$_GET["fifth"]."' ";
+}
+
+if( $_GET["sixth"] !='')
+{
+$query.="inner join syl1 as g on g.word_id = a.id and g.char_id = '6' AND g.mychar = '".$_GET["sixth"]."' ";
+}
+
+if($_GET["seventh"] !='')
+{
+$query.="inner join syl1 as h on h.word_id = a.id and h.char_id = '7' AND h.mychar = '".$_GET["seventh"]."' ";
+}
+
+if($_GET["eighth"] !='')
+{
+$query.="inner join syl1 as i on i.word_id = a.id and i.char_id = '8' AND i.mychar = '".$_GET["eighth"]."' ";
+}
+
+if($_GET["wlength"] != '')
+{
+$query.=" GROUP BY xyz.word_id HAVING mycount = ".$word_len." limit 2000";
+}
+else
+{
+$query.=" GROUP BY xyz.word_id limit 300";
+}
+
+$result=@mysql_query($query);
+
+$num=@mysql_numrows($result);
+
+mysql_close();
+
+echo "$num words found containing $word_first $word_second $word_third $word_forth $word_fifth $word_sixth $word_seventh 
+
+$word_eighth AND $word_len character long <p />";
+
+$i=0;
+while ($i < $num) {
+
+$field1=mysql_result($result,$i,"word");
+
+echo "<b>$field1 <br>";
+
+$i++;
+}
+
+?>
+
+```

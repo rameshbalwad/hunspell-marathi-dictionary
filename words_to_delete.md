@@ -1,0 +1,27 @@
+
+```
+DELETE FROM wordbase WHERE word like ('%य़%') OR word like '%फ़%' limit 100
+
+DELETE FROM wordbase WHERE word like ('%ध्द%') OR word like ('%’%') OR word like ('%‘%') limit 1000
+
+DELETE FROM wordbase WHERE word LIKE concat( '%', right( 'वॊ', 1 ) , '%' ) limit 1000
+
+DELETE FROM wordbase WHERE word LIKE concat( '%', right( 'णॆ', 1 ) , '%' ) LIMIT 1000  
+
+DELETE FROM wordbase WHERE word LIKE concat( '%', right( 'नाऎ', 1 ) , '%' ) LIMIT 1000  
+
+DELETE FROM wordbase WHERE word LIKE concat( '%', right( left( 'दॄष्टिकोनातून', 2 ) , 1 ) , '%' ) LIMIT 100  
+
+DELETE FROM wordbase WHERE word IN ('परंतू', 'यथामती', 'तथापी', 'आणी', 'नी', 'इत्यादि', 'हि', 'अन') LIMIT 9
+
+DELETE FROM wordbase WHERE (word LIKE '%ि' OR word LIKE '%ु' OR word like '%्') and (word not in ('परंतु', 'यथामति', 'तथापि', 'कदापि', 'अद्यापि', 'आणि', 'नि', 'लुटुलुटु', 'तुरुतुरु', 'झुंजुमुंजु', 'झुरुमुरु', 'हळुहळु', 'खुदुखुदु', 'अन्')) limit 200
+
+DELETE FROM wordbase WHERE (word LIKE '%कोणचा%' OR word LIKE '%एकादा%') limit 100
+
+DELETE FROM wordbase WHERE word LIKE '%़%' and word not like '%ऱ्%' limit 30
+
+DELETE FROM wordbase WHERE word REGEXP '[[:digit:]]' OR word REGEXP '[[:xdigit:]]' OR word REGEXP '[[:cntrl:]]' LIMIT 500
+
+delete from wordbase where word like concat('%', right('ब्लॉं', 2), '%') limit 50
+
+```

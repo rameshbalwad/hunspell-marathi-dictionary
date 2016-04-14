@@ -1,0 +1,52 @@
+wordnet service seems to be very useful. This is an extra ordinary work from IIT.
+
+Downloaded the source text files from:
+http://www.cfilt.iitb.ac.in/download/JMWNL_1.2.tar.gz
+
+The download page is :
+http://www.cfilt.iitb.ac.in/Downloads.html
+
+I tried one word and found 2 verbs were there in the data file.
+```
+कसणे...
+Verb(2)
+
+    (R)(H)(E) कसणे  - जमीन पीक घेण्यायोग्य करणे   "शेतकर्‍यांनी पडीक जमीन मोठ्या प्रयत्नाने कसली."
+        HINDI SYNSET NOT FOUND
+        ENGLISH SYNSET NOT FOUND
+    (R)(H)(E) कसणे  - दोरी इ. बांधून आवळणे   "त्यांनी कमरेला शेला कसला."
+        Ontology Nodes
+            क्रियावाचक (Verb of Action) ( VOA उदाहरणे :- पळणे, खाणे इत्यादी )
+                क्रियापद (Verb) ( V उदाहरणे :- लिहीणे,पडणे इत्यादी ) 
+
+_____
+
+data_txt
+
+00052837 03 01 कसणे 0001 0400 00000183 | जमीन पीक घेण्यायोग्य करणे:"शेतकर्‍यांनी पडीक जमीन मोठ्या प्रयत्नाने कसली." 
+
+00004239 03 01 कसणे 0001 0400 00000123 | दोरी इ. बांधून आवळणे:"त्यांनी कमरेला शेला कसला."
+______
+
+onto.txt
+
+00000123  0001 00000116  | क्रियावाचक (Verb of Action) {VOA  उदाहरणे :- पळणे, खाणे इत्यादी}
+00000116  0001 00000001  | क्रियापद (Verb) {V  उदाहरणे :- लिहीणे,पडणे इत्यादी}
+```
+
+
+Upto this everything is pretty clear. What I did not understand is that if I type the wrongly seplled word it does not return anything. That can be figured out. But how do you relate teh words to it's original form? For e.g.
+
+```
+गरीबांना 
+This returns no results as it is wrongly spelled word.
+
+But all of the following are correctly mapped to the mool_word "गरीब". 
+गरिबांना
+गरिबांचा
+गरिबाचा
+गरिबाला
+गरिबांकडून
+
+I will like to know how this is done.
+```

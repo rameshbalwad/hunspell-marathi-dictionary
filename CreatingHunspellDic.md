@@ -1,0 +1,14 @@
+# wordxtr shell script
+
+# Introduction #
+How to create Hunspell dictionary from wordlist.
+
+# Details #
+
+wordxtr is a shell script that will create hunspell dictionary from given plain text input data files.
+
+https://fedorahosted.org/wordxtr/
+
+and
+
+http://people.redhat.com/caolanm/hunspell/wordlist2hunspell

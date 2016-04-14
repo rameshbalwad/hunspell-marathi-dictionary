@@ -1,0 +1,253 @@
+
+```
+Here is the process that was used to create the auto-correct extension that can be found here...
+http://code.google.com/p/openoffice-marathi-autocorrect/
+
+Only the words with wrong "ध्द" will be replaced with the correct "द्ध". More words will be added in the future. 
+The following query will create a table with 2 columns. The first one is the wrong words and the second column is the correct word. There are around 2,000 words expected.
+
+drop table if exists autocorrect;
+
+create table autocorrect
+select 
+replace (
+(replace ((replace ((replace ((replace ((replace ((replace ((replace ((replace
+((replace ((replace ((replace( word, 'द्ध', 'ध्द' )), 'द्धा' , 'ध्दा' )), 'द्धि', 'ध्दि')), 'द्धी','ध्दी')), 'द्धु' , 'ध्दु' )), 'द्धू', 'ध्दू')), 'द्धे', 'ध्दे')), 'द्धै', 'ध्दै')) ,'द्धो', 'ध्दो')), 'द्धौ', 'ध्दौ' )), 'द्धं', 'ध्दं')), 'द्धः', 'ध्दः' ) as wrong, word as correct 
+from wordbase where verified > 0 and (
+(word like '%द्ध%') or (word like '%द्धा%') or (word like '%द्धि%') or (word like
+'%द्धी%') or (word like '%द्धु%') or (word like '%द्धू%') or (word like '%द्धे%') or (word
+like '%द्धै%') or (word like '%द्धो%') or (word like '%द्धौ%') or (word like '%द्धं%') or
+(word like '%द्धः%')
+)
+limit 2000;
+
+insert into autocorrect
+SELECT replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ), word 
+FROM wordbase WHERE verified >0
+AND (
+char_length( word ) - char_length( replace( replace( replace( replace( word, 'ी', '' ) , 'ि', '' ) , 'ू', '' ) , 'ु', '' ) ) >1
+)
+AND (
+word LIKE (
+'%ी%'
+)
+OR word LIKE (
+'%ि%'
+)
+OR word LIKE (
+'%ू%'
+)
+OR word LIKE (
+'%ु%'
+)
+)
+AND replace( replace( replace( replace( word, 'ी', 'ि' ) , 'ि', 'ी' ) , 'ू', 'ु' ) , 'ु', 'ू' ) != word
+LIMIT 50000;
+
+
+insert into autocorrect
+SELECT (
+replace( replace( replace( replace( replace( replace( word, 'िक', 'ीक' ) , 'ित', 'ीत' ) , 'िय', 'ीय' ) , 'िल', 'ील' ) , 'िन', 'ीन' ) , 'िय', 'ीय' )
+), word
+FROM wordbase
+WHERE verified >0
+AND (
+word LIKE '%िक'
+OR word LIKE '%ित'
+OR word LIKE '%िय'
+OR word LIKE '%िल'
+OR word LIKE '%िन'
+OR word LIKE '%िय'
+)
+AND (
+(
+replace( replace( replace( replace( replace( replace( word, 'िक', 'ीक' ) , 'ित', 'ीत' ) , 'िय', 'ीय' ) , 'िल', 'ील' ) , 'िन', 'ीन' ) , 'िय', 'ीय' )
+) != word
+)
+LIMIT 3000; 
+
+insert into autocorrect
+SELECT (
+replace( replace( replace( replace( replace( replace( word, 'ीक', 'िक'), 'ीत', 'ित'), 'ीय', 'िय'), 'ील', 'िल'), 'ीन', 'िन'), 'ीय', 'िय')
+), word
+FROM wordbase
+WHERE verified >0
+AND (
+word LIKE '%ीक'
+OR word LIKE '%ीत'
+OR word LIKE '%ीय'
+OR word LIKE '%ील'
+OR word LIKE '%ीन'
+OR word LIKE '%ीय'
+)
+AND (
+(
+replace( replace( replace( replace( replace( replace( word, 'ीक', 'िक') ,'ीत', 'ित'), 'ीय', 'िय') , 'ील', 'िल') , 'ीन', 'िन') ,'ीय', 'िय')
+) != word
+) limit 9000;
+
+
+insert into autocorrect
+select replace(replace(word, 'ऱ्य', 'र्य'), 'ऱ्ह', 'र्ह'), word from wordbase where verified > 0 and (word like '%ऱ्य%' or word like '%ऱ्ह%') limit 3000;
+
+insert into autocorrect
+SELECT replace( word, 'ः', '' ) , word FROM wordbase WHERE verified > 0 AND word LIKE '%ः%' LIMIT 1000;
+ 
+insert into autocorrect
+SELECT 
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'सु', 'सू') 
+, 'वि', 'वी')
+, 'प्रति', 'प्रती')
+, 'परि', 'परी')
+, 'नि', 'नी')
+, 'अभि', 'अभी')
+, 'अनु', 'अनू')
+, 'अधि', 'अधी')
+, 'अति', 'अती')
+, word
+FROM wordbase WHERE verified > 0 AND (word LIKE 'अति%' OR word LIKE 'अधि%' OR word LIKE 'अनु%' OR word LIKE 'अभि%' OR word LIKE 'उप%' OR word LIKE 'नि%' OR word LIKE 'परि%' OR word LIKE 'प्रति%' OR word LIKE 'वि%' OR word LIKE 'सु%' ) limit 10000;
+
+insert into autocorrect
+SELECT 
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'िक', 'ीक') 
+, 'ीत', 'ित')
+, 'ित', 'ीत')
+, 'िय', 'ीय')
+, 'िल', 'ील')
+, 'ीन', 'िन')
+, 'ीय', 'िय')
+, 'कीय', 'किय')
+, word
+FROM wordbase 
+WHERE verified >0
+AND (
+word LIKE '%ीक'
+OR word LIKE '%िक'
+OR word LIKE '%ीत'
+OR word LIKE '%ित'
+OR word LIKE '%िय'
+OR word LIKE '%िल'
+OR word LIKE '%ीन'
+OR word LIKE '%ीय'
+OR word LIKE '%कीय'
+)
+AND (
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(
+replace(word, 'िक', 'ीक') 
+, 'ीत', 'ित')
+, 'ित', 'ीत')
+, 'िय', 'ीय')
+, 'िल', 'ील')
+, 'ीन', 'िन')
+, 'ीय', 'िय')
+, 'कीय', 'किय')
+!= word
+)
+limit 3000;
+
+insert into autocorrect 
+SELECT replace( word, 'त्त्व', 'त्व' ) , word FROM wordbase WHERE verified >0 AND word LIKE '%त्त्व%' LIMIT 300; 
+
+insert into autocorrect
+SELECT replace( word, 'त्व', 'त्त्व') , word FROM wordbase WHERE verified >0 
+and (word like '%त्व%'  and word not like '%त्त्व%') LIMIT 500; 
+
+insert into autocorrect
+SELECT replace( word, 'ङ्म', 'गम' ) , word FROM wordbase WHERE verified > 0 
+AND word LIKE '%ङ्म%' LIMIT 30;
+
+insert into autocorrect
+SELECT replace( word, 'ऐ', 'ऎ' ), word from wordbase WHERE verified > 0 
+AND word LIKE '%ऐ%' limit 1000;
+
+insert into autocorrect
+SELECT replace( word, 'ँ', 'ॅं' ) , word FROM wordbase WHERE verified > 0 
+AND word LIKE '%ँ%' LIMIT 1000;
+
+insert into autocorrect
+SELECT replace( replace( word, 'दुर्', 'दूर्' ) , 'निर्', 'नीर्' ) , word
+FROM wordbase WHERE verified > 0 
+AND (word LIKE 'दुर्%'OR word LIKE 'निर्%') LIMIT 1000; 
+
+DELETE FROM autocorrect WHERE wrong = correct LIMIT 1000;
+
+ALTER IGNORE TABLE autocorrect ADD PRIMARY KEY ( wrong, correct ) ;
+
+Database: main - Export 
+autocorrect table CSV format
+Fields terminated by ' block-list:name='
+Fields escaped by "
+
+"औध्दत्य" block-list:name="औद्धत्य"
+"कटिबध्द" block-list:name="कटिबद्ध"
+"चलनपध्दती" block-list:name="चलनपद्धती"
+"चलनवृध्दी" block-list:name="चलनवृद्धी"
+"चित्तशुध्दी" block-list:name="चित्तशुद्धी"
+"संबध्द" block-list:name="संबद्ध"
+"सदसद्विवेकबुध्दी" block-list:name="सदसद्विवेकबुद्धी"
+"समबुध्दी" block-list:name="समबुद्धी"
+
+You will get the results as shown above. Copy all the text and paste it in open office writer. Now you need to append each line with "<block-list:block block-list:abbreviated-name=" And the end of each line will be " />"
+
+In the Find & Replace dialog box, search for ^" and Replace with <block-list:block block-list:abbreviated-name="
+In order to close the tag, search for "$ and replace with " />
+
+
+So the final statement should look something like this...
+
+  <block-list:block block-list:abbreviated-name="अंकगणीत" block-list:name="अंकगणित" /> 
+  <block-list:block block-list:abbreviated-name="अंकगनीत" block-list:name="अंकगणित" /> 
+  <block-list:block block-list:abbreviated-name="अकराळविकराळ" block-list:name="अक्राळविक्राळ" /> 
+  <block-list:block block-list:abbreviated-name="अंकलीपी" block-list:name="अंकलिपी" /> 
+
+Or you can get the same results using the following query.
+drop table if exists finalAutocorrect;
+
+create table finalAutocorrect 
+select concat('<block-list:block block-list:abbreviated-name="', wrong, '" block-list:name="', correct, '" />') as myxml from autocorrect;
+
+# Export the data of finalAutocorrect table in CSV format without any delimiters
+# The XML file should have a name DocumentList.xml and should start with the following 2 lines.
+echo '<?xml version="1.0" encoding="UTF-8" ?> <block-list:block-list xmlns:block-list="http://openoffice.org/2001/block-list">' > header.txt
+echo '</block-list:block-list>' > footer.txt
+cat header.txt finalAutocorrect.csv footer.txt > /media/disk/acor_mr-IN/DocumentList.xml
+cd /media/disk/acor_mr-IN
+zip -r acor_mr-IN.dat *
+mv acor_mr-IN.dat /media/disk/
+
+The XML file should have a name DocumentList.xml and should start with the following 2 lines.
+<?xml version="1.0" encoding="UTF-8" ?> 
+- <block-list:block-list xmlns:block-list="http://openoffice.org/2001/block-list">
+Make sure that there is no space before <?xml tag. 
+
+The last line of the file should be...
+  </block-list:block-list>
+
+select save as from file menu and the name should be "DocumentList.xml". Deselect "Automatic file name extension" and the type should be "Text Encoded (.txt)"
+The location should be the same as where mimetype file and META-INF directory is stored. Select UTF-8 as character set when asked.
+
+Double click on the XML file and it should open in Internet Explorer and display the contents correctly.
+
+select all the files from the current directory and choose add to acor_mr-IN.zip from the 7-zip context menu. The zip file should be renamed to acor_mr-IN.dat using the command prompt.
+```

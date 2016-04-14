@@ -1,0 +1,267 @@
+In order to find jodakshar we need to join all the _mulkasharas_ with themselves.
+Therefore the following table was created.
+
+```
+drop table if exists mulakshare;
+
+CREATE TABLE `mulakshare` (
+  `id` INT(2) ZEROFILL NOT NULL AUTO_INCREMENT,
+  `hakaar` int default 0,
+  `akshar` varchar(100) default NULL,
+   primary key (id),
+   key (akshar)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES( 0, 'क्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'ख्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ग्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'घ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ङ्');
+
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'च्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'छ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ज्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'झ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ञ्');
+
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ट्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'ठ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ड्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'ढ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'ण्');
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'त्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'थ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'द्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'ध्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'न्');
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'प्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(1, 'फ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ब्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(2, 'भ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'म्');
+
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'य्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'र्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'ल्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(3, 'व्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'श्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ष्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'स्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ह्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, 'ळ्');
+INSERT INTO `mulakshare` (`hakaar`, `akshar`) VALUES(0, '');
+
+
+
+drop table if exists vyanjan;
+
+CREATE TABLE vyanjan (
+  `id` INT(2) ZEROFILL NOT NULL AUTO_INCREMENT,
+  `hakaar` int default 0,
+  `akshar` varchar(100) default NULL,
+   primary key (id),
+   key (akshar)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES( 0, 'क');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'ख');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ग');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'घ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ङ');
+
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'च');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'छ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ज');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'झ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ञ');
+
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ट');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'ठ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ड');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'ढ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'ण');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'त');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'थ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'द');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'ध');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'न');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'प');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(1, 'फ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ब');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(2, 'भ');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'म');
+
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'य');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'र');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'ल');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(3, 'व');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'श');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ष');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'स');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ह');
+INSERT INTO `vyanjan` (`hakaar`, `akshar`) VALUES(0, 'ळ');
+
+
+drop table if exists swar;
+
+CREATE TABLE `swar` (
+   swar_id int not null auto_increment,
+  `myswar` varchar(100) NOT NULL default '',
+   PRIMARY KEY (swar_id),  
+   UNIQUE KEY  (`myswar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ा');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ि');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ी');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ु');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ू');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('े');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ै');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ो');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ौ');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ः');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ृ');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॄ');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॢ');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ॣ');
+INSERT IGNORE INTO `swar` (`myswar`) VALUES('ँ');
+
+
+drop table if exists anuswar;
+
+CREATE TABLE `anuswar` (
+  `anuswar_id` int(11) NOT NULL auto_increment,
+  `my_anuswar` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`anuswar_id`),
+  UNIQUE KEY `my_anuswar` (`my_anuswar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `anuswar` VALUES(1, 'ं');
+INSERT INTO `anuswar` VALUES(2, '');
+
+
+```
+
+The following query will generate all the possible jodakshars.
+
+select concat(a.akshar, b.akshar) as jodakshar from mulakshare as a inner join mulakshare as b
+
+```
+क्क्
+क्श्क्
+ख्क्
+ग्क्
+घ्क्
+च्क्
+छ्क्
+ज्क्
+झ्क्
+ञ्क्
+ट्क्
+ठ्क्
+
+```
+
+In the extract shown above, the character "क्" is joined with all other mulakshars. There are 35 mulkashars and therefore the number of possible combination is 1,225. Now we need to find if these jodakshars were used anywhere in the database and if it was used what was the character just before the "jodakshar". The following query was used:
+
+```
+select * from wordbase as a inner join 
+(select concat(a.akshar, b.akshar) as jodakshar from mulakshare as a inner join mulakshare as b) as dt
+where word like concat('%', jodakshar , '%')   limit 10
+
+
+word 	verified 	jodakshar
+व्युत्क्रम 	20070422 	त्क्
+सत्त्व 	20070424 	त्त्
+मक्त्यात 	20070501 	क्त्
+सत्त्वगुण 	20070424 	त्त्
+सत्त्वनिष्ठ 	20070424 	त्त्
+सत्त्वशील 	20070424 	त्त्
+सत्त्वहीन 	20070424 	त्त्
+चातुर्वर्ण्य 	20070424 	र्ण्
+और्ध्वदेहिक 	20070424 	र्ध्
+शास्त्रांप्रमाणे 	20070430 	स्त्
+
+```
+
+
+
+In order to locate the exact position of the "jodakshar" we need to use the locate function. Let's dissect the word 'व्युत्क्रम' and find out the position number of each character.
+
+```
+SELECT substring( 'व्युत्क्रम', -10, 1 ) AS one, substring( 'व्युत्क्रम', -9, 1 ) AS two, substring( 'व्युत्क्रम', -8, 1 ) AS three, 
+substring( 'व्युत्क्रम', -7, 1 ) AS four, substring( 'व्युत्क्रम', -6, 1 ) AS five, substring( 'व्युत्क्रम', -5, 1 ) AS six, 
+substring( 'व्युत्क्रम', -4, 1 ) AS seven, substring( 'व्युत्क्रम', -3, 1 ) AS eight, substring( 'व्युत्क्रम', -2, 1 ) AS nine, 
+substring( 'व्युत्क्रम', -1, 1 ) AS ten 
+
+
+one 	two 	three 	four 	five 	six 	seven 	eight 	nine 	ten
+व 	् 	य 	ु 	त 	् 	क 	् 	र 	म
+
+
+select locate('त्क्' , 'व्युत्क्रम')
+5
+
+select substring('व्युत्क्रम', (locate('त्क्' , 'व्युत्क्रम')*1))
+त्क्रम
+
+```
+
+नियम क्रमांक २१ - मराठी शब्दात आलेल्या जोडाक्षराच्या आधीच्या अक्षराला वेलांटी लिहावी लागली, तर ती नेहमी पहिली किंवा र्‍हस्व लिहावी. उदा. किल्ला, तिप्पट, शिल्लक, हिस्सा
+अपवाद संस्कृत शब्दांचा : परीक्षा, भीष्म, ईश्वर
+
+हीच गोष्ट जोडाक्षराच्या आधीच्या उकाराला लागू होते. उदा. कुस्ती, गुद्दा, दुप्पट, लुच्चा, मुक्काम, उन्हाळा
+अपवाद संस्कृत शब्दांचा : गोमूत्र, पूज्य, मूल्य, शून्य, ऊर्जा
+
+लाखो शब्दांमधून असे शब्द शोधून ते तपासणे कठीण आहे. म्हणून खाली दिलेली क्वेरी वापरली.
+
+```
+
+DROP TABLE IF EXISTS myjodakshar;
+
+CREATE TABLE myjodakshar SELECT word, verified, locate( dt.jodakshar, word ) AS mylocate, substring( word, (
+locate( dt.jodakshar, word ) * -2 ) , 1
+)mysub, right( (
+left( word, (
+locate( dt.jodakshar, word ) -1 ) )
+), 1
+) AS mychar
+FROM wordbase AS a
+INNER JOIN (
+
+SELECT concat( a.akshar, b.akshar ) AS jodakshar
+FROM mulakshare AS a
+INNER JOIN mulakshare AS b
+) AS dt
+WHERE word LIKE concat( '%', jodakshar, '%' )
+LIMIT 1000
+
+
+SELECT * FROM myjodakshar WHERE mychar IN ('ी', 'ू')
+
+मूर्च्छा  	20071216  	3  	र  	ू
+सूक्ष्मदर्शक 	20071216 	3 	म 	ू
+सूक्ष्मदृष्टी 	20071216 	3 	द 	ू
+सूक्ष्मबुद्धी 	20071216 	3 	ब 	ू
+सूक्ष्मातिसूक्ष्म 	20071216 	3 	ू 	ू
+सूक्ष्म 	20071216 	3 	ू 	ू
+सूक्ष्मजीव 	20071216 	3 	ष 	ू
+दुरूस्त्या 	20090518 	5 	द 	ू
+सूक्ष्मात 	20090519 	3 	् 	ू
+
+```
+
+
+वर दिलेल्या शब्दांत 'दुरूस्त्या' हा शब्द आलेला आहे. हा शब्द दुरुस्ती या शब्दावरून तयार झाला आहे व हा शब्द संस्कृत नाही. तेंव्हा यातील जोडाक्षराआधीचा उकार र्‍ह्स्व असायला हवा. पण यातील रू दीर्घ असला तरी  नजरचुकीने स्पेल चेकरमध्ये जमा झाला. र्‍हस्व रु चा योग्य शब्द "दुरुस्त्या" हा देखील डेटाबेसमध्ये आधीपासूनच होता. म्हणजे आता दुरूस्त्या व दुरुस्त्या हे दोन्ही शब्द बरोबर म्हणून दाखवले जातील, जे चुकीचे आहे.
+
+म्हणून जोडाक्षराआधी आलेले दीर्घ ऊ व ईकार तज्ज्ञांकडून तपासून घ्यावे लागतील. व असे शब्द वर दिलेली आज्ञावली वापरून शोधता येतील.

@@ -1,0 +1,28 @@
+# Marathi Ubuntu Live CD #
+
+A new Live Ubuntu CD is now available with all the features built-in.
+
+  * Libre office spell check extension
+  * Firefox spell check extension
+  * install ibus input method for unicode typing
+  * customize user experience with ibus
+  1. display all 4 input options
+  1. defaults to phonetic
+  1. keyboard shortcut Ctrl + Shift + E for english and Ctrl + Shift + M for Marathi
+  * fonts
+  * anaconda for python development
+
+## The 32 bit version: (1.6 GB) ##
+gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-i386.iso
+
+## The 64 bit version: (1.6 GB) ##
+
+gamabhana.s3.amazonaws.com/ubuntu-14.10-desktop-customised-amd64.iso
+
+### The screen shot is available here: ###
+
+s3.amazonaws.com/gamabhana/aaa1.png
+
+### The source code of Live CD config files: ###
+
+https://github.com/shantanuo/livecdcustomisation-shantanuo
